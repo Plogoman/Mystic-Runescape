@@ -1,2 +1,2 @@
 # Mystic Rinescape 
-### the Game of Wizardry
+### The Game of Wizardry
