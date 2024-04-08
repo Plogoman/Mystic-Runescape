@@ -1,0 +1,10 @@
+I:\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.dll
+I:\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.pdb
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.AssemblyReference.cache
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.GeneratedMSBuildEditorConfig.editorconfig
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfoInputs.cache
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfo.cs
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.CoreCompileInputs.cache
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.sourcelink.json
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.dll
+I:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.pdb

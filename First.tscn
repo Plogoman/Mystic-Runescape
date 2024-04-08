@@ -1,31 +1,105 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles_flipped.png" type="Texture" id=1]
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles.png" type="Texture" id=2]
+[ext_resource path="res://Adventurer/adventurer-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://Adventurer.cs" type="Script" id=4]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=84]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=85]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=86]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=87]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=88]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=89]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=90]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=91]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=92]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=93]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=94]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=95]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=96]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=97]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=98]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=99]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=100]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=101]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=102]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=103]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=104]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=105]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=106]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=107]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=108]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=109]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=110]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=111]
+points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=112]
+points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=113]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=114]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=115]
+points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
 
 [sub_resource type="TileSet" id=9]
 1/name = "cavesofgallet_tiles_flipped.png 1"
@@ -38,38 +112,14 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 1 )
+1/shape = SubResource( 84 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 5 ),
+"shape": SubResource( 84 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -83,26 +133,14 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 6 )
+2/shape = SubResource( 95 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 95 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -116,9 +154,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 106 )
 3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 106 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
 4/name = "cavesofgallet_tiles.png 4"
 4/texture = ExtResource( 2 )
@@ -130,9 +175,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 110 )
 4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 110 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 4/z_index = 0
 5/name = "cavesofgallet_tiles.png 5"
 5/texture = ExtResource( 2 )
@@ -144,9 +196,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 111 )
 5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 111 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 5/z_index = 0
 6/name = "cavesofgallet_tiles.png 6"
 6/texture = ExtResource( 2 )
@@ -158,9 +217,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 112 )
 6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 112 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 6/z_index = 0
 7/name = "cavesofgallet_tiles.png 7"
 7/texture = ExtResource( 2 )
@@ -172,9 +238,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 113 )
 7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 113 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 7/z_index = 0
 8/name = "cavesofgallet_tiles.png 8"
 8/texture = ExtResource( 2 )
@@ -186,9 +259,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 114 )
 8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 114 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 8/z_index = 0
 9/name = "cavesofgallet_tiles.png 9"
 9/texture = ExtResource( 2 )
@@ -200,9 +280,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 115 )
 9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 115 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 9/z_index = 0
 10/name = "cavesofgallet_tiles.png 10"
 10/texture = ExtResource( 2 )
@@ -214,9 +301,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 85 )
 10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 85 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 10/z_index = 0
 11/name = "cavesofgallet_tiles_flipped.png 11"
 11/texture = ExtResource( 1 )
@@ -228,9 +322,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 86 )
 11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 86 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 11/z_index = 0
 12/name = "cavesofgallet_tiles_flipped.png 12"
 12/texture = ExtResource( 1 )
@@ -242,9 +343,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape = SubResource( 87 )
 12/shape_one_way = false
-12/shape_one_way_margin = 0.0
-12/shapes = [  ]
+12/shape_one_way_margin = 1.0
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 87 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 12/z_index = 0
 13/name = "cavesofgallet_tiles_flipped.png 13"
 13/texture = ExtResource( 1 )
@@ -256,9 +364,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 13/navigation_offset = Vector2( 0, 0 )
 13/shape_offset = Vector2( 0, 0 )
 13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape = SubResource( 88 )
 13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
+13/shape_one_way_margin = 1.0
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 88 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 13/z_index = 0
 14/name = "cavesofgallet_tiles_flipped.png 14"
 14/texture = ExtResource( 1 )
@@ -270,9 +385,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 89 )
 14/shape_one_way = false
-14/shape_one_way_margin = 0.0
-14/shapes = [  ]
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 89 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 14/z_index = 0
 15/name = "cavesofgallet_tiles_flipped.png 15"
 15/texture = ExtResource( 1 )
@@ -284,9 +406,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 15/navigation_offset = Vector2( 0, 0 )
 15/shape_offset = Vector2( 0, 0 )
 15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape = SubResource( 90 )
 15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
+15/shape_one_way_margin = 1.0
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 90 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 15/z_index = 0
 16/name = "cavesofgallet_tiles_flipped.png 16"
 16/texture = ExtResource( 1 )
@@ -298,9 +427,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 16/navigation_offset = Vector2( 0, 0 )
 16/shape_offset = Vector2( 0, 0 )
 16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 91 )
 16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 91 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 16/z_index = 0
 17/name = "cavesofgallet_tiles_flipped.png 17"
 17/texture = ExtResource( 1 )
@@ -312,9 +448,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 17/navigation_offset = Vector2( 0, 0 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 92 )
 17/shape_one_way = false
-17/shape_one_way_margin = 0.0
-17/shapes = [  ]
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 92 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 17/z_index = 0
 18/name = "cavesofgallet_tiles_flipped.png 18"
 18/texture = ExtResource( 1 )
@@ -326,9 +469,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 18/navigation_offset = Vector2( 0, 0 )
 18/shape_offset = Vector2( 0, 0 )
 18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape = SubResource( 93 )
 18/shape_one_way = false
-18/shape_one_way_margin = 0.0
-18/shapes = [  ]
+18/shape_one_way_margin = 1.0
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 93 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 18/z_index = 0
 19/name = "cavesofgallet_tiles.png 19"
 19/texture = ExtResource( 2 )
@@ -340,9 +490,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 19/navigation_offset = Vector2( 0, 0 )
 19/shape_offset = Vector2( 0, 0 )
 19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape = SubResource( 94 )
 19/shape_one_way = false
-19/shape_one_way_margin = 0.0
-19/shapes = [  ]
+19/shape_one_way_margin = 1.0
+19/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 94 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 19/z_index = 0
 20/name = "cavesofgallet_tiles_flipped.png 20"
 20/texture = ExtResource( 1 )
@@ -354,9 +511,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 20/navigation_offset = Vector2( 0, 0 )
 20/shape_offset = Vector2( 0, 0 )
 20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape = SubResource( 96 )
 20/shape_one_way = false
-20/shape_one_way_margin = 0.0
-20/shapes = [  ]
+20/shape_one_way_margin = 1.0
+20/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 96 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 20/z_index = 0
 21/name = "cavesofgallet_tiles.png 21"
 21/texture = ExtResource( 2 )
@@ -368,9 +532,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 21/navigation_offset = Vector2( 0, 0 )
 21/shape_offset = Vector2( 0, 0 )
 21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape = SubResource( 97 )
 21/shape_one_way = false
-21/shape_one_way_margin = 0.0
-21/shapes = [  ]
+21/shape_one_way_margin = 1.0
+21/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 97 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 21/z_index = 0
 22/name = "cavesofgallet_tiles.png 22"
 22/texture = ExtResource( 2 )
@@ -382,9 +553,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 22/navigation_offset = Vector2( 0, 0 )
 22/shape_offset = Vector2( 0, 0 )
 22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape = SubResource( 98 )
 22/shape_one_way = false
-22/shape_one_way_margin = 0.0
-22/shapes = [  ]
+22/shape_one_way_margin = 1.0
+22/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 98 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 22/z_index = 0
 23/name = "cavesofgallet_tiles.png 23"
 23/texture = ExtResource( 2 )
@@ -396,9 +574,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 23/navigation_offset = Vector2( 0, 0 )
 23/shape_offset = Vector2( 0, 0 )
 23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape = SubResource( 99 )
 23/shape_one_way = false
-23/shape_one_way_margin = 0.0
-23/shapes = [  ]
+23/shape_one_way_margin = 1.0
+23/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 99 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 23/z_index = 0
 24/name = "cavesofgallet_tiles.png 24"
 24/texture = ExtResource( 2 )
@@ -410,9 +595,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 24/navigation_offset = Vector2( 0, 0 )
 24/shape_offset = Vector2( 0, 0 )
 24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape = SubResource( 100 )
 24/shape_one_way = false
-24/shape_one_way_margin = 0.0
-24/shapes = [  ]
+24/shape_one_way_margin = 1.0
+24/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 100 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 24/z_index = 0
 25/name = "cavesofgallet_tiles.png 25"
 25/texture = ExtResource( 2 )
@@ -424,9 +616,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 25/navigation_offset = Vector2( 0, 0 )
 25/shape_offset = Vector2( 0, 0 )
 25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape = SubResource( 101 )
 25/shape_one_way = false
-25/shape_one_way_margin = 0.0
-25/shapes = [  ]
+25/shape_one_way_margin = 1.0
+25/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 101 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 25/z_index = 0
 26/name = "cavesofgallet_tiles.png 26"
 26/texture = ExtResource( 2 )
@@ -438,9 +637,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 26/navigation_offset = Vector2( 0, 0 )
 26/shape_offset = Vector2( 0, 0 )
 26/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+26/shape = SubResource( 102 )
 26/shape_one_way = false
-26/shape_one_way_margin = 0.0
-26/shapes = [  ]
+26/shape_one_way_margin = 1.0
+26/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 102 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 26/z_index = 0
 27/name = "cavesofgallet_tiles_flipped.png 27"
 27/texture = ExtResource( 1 )
@@ -452,9 +658,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 27/navigation_offset = Vector2( 0, 0 )
 27/shape_offset = Vector2( 0, 0 )
 27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+27/shape = SubResource( 103 )
 27/shape_one_way = false
-27/shape_one_way_margin = 0.0
-27/shapes = [  ]
+27/shape_one_way_margin = 1.0
+27/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 103 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 27/z_index = 0
 28/name = "cavesofgallet_tiles_flipped.png 28"
 28/texture = ExtResource( 1 )
@@ -466,9 +679,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 28/navigation_offset = Vector2( 0, 0 )
 28/shape_offset = Vector2( 0, 0 )
 28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape = SubResource( 104 )
 28/shape_one_way = false
-28/shape_one_way_margin = 0.0
-28/shapes = [  ]
+28/shape_one_way_margin = 1.0
+28/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 104 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 28/z_index = 0
 29/name = "cavesofgallet_tiles_flipped.png 29"
 29/texture = ExtResource( 1 )
@@ -480,9 +700,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 29/navigation_offset = Vector2( 0, 0 )
 29/shape_offset = Vector2( 0, 0 )
 29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape = SubResource( 105 )
 29/shape_one_way = false
-29/shape_one_way_margin = 0.0
-29/shapes = [  ]
+29/shape_one_way_margin = 1.0
+29/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 105 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 29/z_index = 0
 30/name = "cavesofgallet_tiles_flipped.png 30"
 30/texture = ExtResource( 1 )
@@ -494,9 +721,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 30/navigation_offset = Vector2( 0, 0 )
 30/shape_offset = Vector2( 0, 0 )
 30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+30/shape = SubResource( 107 )
 30/shape_one_way = false
-30/shape_one_way_margin = 0.0
-30/shapes = [  ]
+30/shape_one_way_margin = 1.0
+30/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 107 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 30/z_index = 0
 31/name = "cavesofgallet_tiles_flipped.png 31"
 31/texture = ExtResource( 1 )
@@ -508,9 +742,16 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 31/navigation_offset = Vector2( 0, 0 )
 31/shape_offset = Vector2( 0, 0 )
 31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape = SubResource( 108 )
 31/shape_one_way = false
-31/shape_one_way_margin = 0.0
-31/shapes = [  ]
+31/shape_one_way_margin = 1.0
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 108 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 31/z_index = 0
 32/name = "cavesofgallet_tiles_flipped.png 32"
 32/texture = ExtResource( 1 )
@@ -522,10 +763,316 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 32/navigation_offset = Vector2( 0, 0 )
 32/shape_offset = Vector2( 0, 0 )
 32/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+32/shape = SubResource( 109 )
 32/shape_one_way = false
-32/shape_one_way_margin = 0.0
-32/shapes = [  ]
+32/shape_one_way_margin = 1.0
+32/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 109 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 32/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 6, 8.5 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 222, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 259, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 296, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 333, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 370, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 370, 50, 37 )
+
+[sub_resource type="SpriteFrames" id=83]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 
@@ -535,3 +1082,33 @@ cell_size = Vector2( 8, 8 )
 cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 327710, 2, 0, 327711, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327716, 3, 0, 327717, 3, 0, 327718, 3, 0, 327719, 3, 0, 327720, 3, 0, 327721, 3, 0, 327722, 13, 0, 393246, 5, 0, 393247, 31, 0, 393248, 20, 0, 393249, 20, 0, 393250, 23, 0, 393251, 20, 0, 393252, 20, 0, 393253, 31, 0, 393254, 20, 0, 393255, 20, 0, 393256, 22, 0, 393257, 20, 0, 393258, 18, 0, 458782, 5, 0, 458783, 20, 0, 458784, 27, 0, 458785, 20, 0, 458786, 20, 0, 458787, 20, 0, 458788, 27, 0, 458789, 20, 0, 458790, 23, 0, 458791, 20, 0, 458792, 20, 0, 458793, 23, 0, 458794, 18, 0, 524318, 5, 0, 524319, 26, 0, 524320, 26, 0, 524321, 20, 0, 524322, 22, 0, 524323, 20, 0, 524324, 26, 0, 524325, 20, 0, 524326, 20, 0, 524327, 27, 0, 524328, 20, 0, 524329, 20, 0, 524330, 18, 0, 589854, 5, 0, 589855, 20, 0, 589856, 20, 0, 589857, 20, 0, 589858, 20, 0, 589859, 20, 0, 589860, 20, 0, 589861, 22, 0, 589862, 20, 0, 589863, 22, 0, 589864, 20, 0, 589865, 20, 0, 589866, 18, 0, 655370, 2, 0, 655371, 3, 0, 655372, 3, 0, 655373, 12, 0, 655374, 3, 0, 655375, 3, 0, 655376, 12, 0, 655377, 3, 0, 655378, 3, 0, 655379, 13, 0, 655390, 5, 0, 655391, 20, 0, 655392, 22, 0, 655393, 27, 0, 655394, 20, 0, 655395, 23, 0, 655396, 20, 0, 655397, 31, 0, 655398, 20, 0, 655399, 20, 0, 655400, 20, 0, 655401, 22, 0, 655402, 18, 0, 720906, 5, 0, 720907, 27, 0, 720908, 20, 0, 720909, 29, 0, 720910, 20, 0, 720911, 30, 0, 720912, 20, 0, 720913, 20, 0, 720914, 30, 0, 720915, 18, 0, 720926, 5, 0, 720927, 26, 0, 720928, 20, 0, 720929, 20, 0, 720930, 31, 0, 720931, 20, 0, 720932, 20, 0, 720933, 27, 0, 720934, 20, 0, 720935, 23, 0, 720936, 20, 0, 720937, 20, 0, 720938, 18, 0, 786442, 5, 0, 786443, 20, 0, 786444, 21, 0, 786445, 20, 0, 786446, 26, 0, 786447, 20, 0, 786448, 20, 0, 786449, 21, 0, 786450, 20, 0, 786451, 18, 0, 786462, 5, 0, 786463, 20, 0, 786464, 23, 0, 786465, 26, 0, 786466, 20, 0, 786467, 27, 0, 786468, 20, 0, 786469, 26, 0, 786470, 23, 0, 786471, 20, 0, 786472, 22, 0, 786473, 20, 0, 786474, 18, 0, 851978, 5, 0, 851979, 30, 0, 851980, 20, 0, 851981, 20, 0, 851982, 20, 0, 851983, 30, 0, 851984, 29, 0, 851985, 20, 0, 851986, 20, 0, 851987, 18, 0, 851998, 5, 0, 851999, 20, 0, 852000, 27, 0, 852001, 20, 0, 852002, 20, 0, 852003, 20, 0, 852004, 22, 0, 852005, 20, 0, 852006, 20, 0, 852007, 31, 0, 852008, 20, 0, 852009, 26, 0, 852010, 18, 0, 917514, 5, 0, 917515, 20, 0, 917516, 26, 0, 917517, 20, 0, 917518, 21, 0, 917519, 20, 0, 917520, 20, 0, 917521, 29, 0, 917522, 20, 0, 917523, 18, 0, 917534, 5, 0, 917535, 31, 0, 917536, 20, 0, 917537, 20, 0, 917538, 22, 0, 917539, 20, 0, 917540, 20, 0, 917541, 20, 0, 917542, 27, 0, 917543, 20, 0, 917544, 23, 0, 917545, 20, 0, 917546, 18, 0, 983050, 5, 0, 983051, 20, 0, 983052, 20, 0, 983053, 29, 0, 983054, 20, 0, 983055, 20, 0, 983056, 26, 0, 983057, 20, 0, 983058, 27, 0, 983059, 18, 0, 983070, 5, 0, 983071, 20, 0, 983072, 23, 0, 983073, 20, 0, 983074, 20, 0, 983075, 20, 0, 983076, 23, 0, 983077, 20, 0, 983078, 26, 0, 983079, 20, 0, 983080, 20, 0, 983081, 26, 0, 983082, 18, 0, 1048586, 5, 0, 1048587, 27, 0, 1048588, 21, 0, 1048589, 20, 0, 1048590, 30, 0, 1048591, 20, 0, 1048592, 27, 0, 1048593, 30, 0, 1048594, 20, 0, 1048595, 18, 0, 1048606, 5, 0, 1048607, 20, 0, 1048608, 20, 0, 1048609, 27, 0, 1048610, 20, 0, 1048611, 20, 0, 1048612, 22, 0, 1048613, 20, 0, 1048614, 20, 0, 1048615, 20, 0, 1048616, 27, 0, 1048617, 20, 0, 1048618, 18, 0, 1114122, 5, 0, 1114123, 20, 0, 1114124, 20, 0, 1114125, 20, 0, 1114126, 26, 0, 1114127, 20, 0, 1114128, 21, 0, 1114129, 20, 0, 1114130, 20, 0, 1114131, 18, 0, 1114142, 5, 0, 1114143, 20, 0, 1114144, 20, 0, 1114145, 20, 0, 1114146, 31, 0, 1114147, 20, 0, 1114148, 20, 0, 1114149, 20, 0, 1114150, 31, 0, 1114151, 20, 0, 1114152, 20, 0, 1114153, 20, 0, 1114154, 18, 0, 1179658, 5, 0, 1179659, 19, 0, 1179660, 21, 0, 1179661, 19, 0, 1179662, 25, 0, 1179663, 19, 0, 1179664, 19, 0, 1179665, 26, 0, 1179666, 19, 0, 1179667, 19, 0, 1179668, 3, 0, 1179669, 3, 0, 1179670, 3, 0, 1179671, 12, 0, 1179672, 3, 0, 1179673, 3, 0, 1179674, 12, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 19, 0, 1179679, 20, 0, 1179680, 31, 0, 1179681, 20, 0, 1179682, 20, 0, 1179683, 31, 0, 1179684, 20, 0, 1179685, 20, 0, 1179686, 26, 0, 1179687, 20, 0, 1179688, 31, 0, 1179689, 20, 0, 1179690, 18, 0 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 124, 70 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 2.19346e-07, 0 )
+scale = Vector2( 0.56, 0.540541 )
+frames = SubResource( 83 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="RayCastLeft" type="RayCast2D" parent="KinematicBody2D"]
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 0, 12.5 )
+
+[node name="RayCastRight" type="RayCast2D" parent="KinematicBody2D"]
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 12.5 )
