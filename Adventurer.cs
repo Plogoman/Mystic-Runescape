@@ -33,7 +33,6 @@ public class Adventurer : KinematicBody2D
 		{
 			processMovement(delta);
 		}
-
 		if (IsOnFloor())
 		{
 			if (Input.IsActionJustPressed("Jump"))
@@ -55,7 +54,6 @@ public class Adventurer : KinematicBody2D
 		{
 			processDash();
 		}
-		
 		if (isDashing)
 		{
 			DashTimer -= delta;
@@ -95,14 +93,14 @@ public class Adventurer : KinematicBody2D
 		if (Direction != 0)
 		{
 			Velocity.x = Mathf.Lerp(Velocity.x, Direction * Speed, Acceleration);
-			if(!isInAir)
-			animatedSprite.Play("run");
+			if (!isInAir)
+				animatedSprite.Play("Run");
 		}
 		else
 		{
 			Velocity.x = Mathf.Lerp(Velocity.x, 0, Friction);
 			if(!isInAir)
-			animatedSprite.Play("idle");
+				animatedSprite.Play("Idle");
 		}
 	}
 
