@@ -21,6 +21,7 @@ public class Adventurer : KinematicBody2D
 	public override void _PhysicsProcess(float delta)
 	{
 		Vector2 Velocity = new Vector2();
+		int char;
 		bool isDashing = false;
 		if (!isDashing)
 		{
