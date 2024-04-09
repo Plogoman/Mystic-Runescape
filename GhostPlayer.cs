@@ -12,8 +12,7 @@ public class GhostPlayer : Node2D
     {
         GetNode<AnimationPlayer>("AnimationPlayer").Play("Fade Out");
     }
-
-
+    
     public void SetHValue(bool value)
     {
         GetNode<Sprite>("Sprite").FlipH = value;
