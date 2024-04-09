@@ -13,6 +13,18 @@ public class Spikes : Node2D
         
     }
 
+    public void _on_Area2D_body_entered(object body)
+    {
+        GD.Print("Body: " + body + " has entered");
+        if (body is KinematicBody2D)
+        {
+            if (body is Adventurer)
+            {
+                Adventurer PC = body as Adventurer;
+                PC.TakeDamage();
+            }
+        }
+    }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {

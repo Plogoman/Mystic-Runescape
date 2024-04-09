@@ -19,8 +19,10 @@ public class Adventurer : KinematicBody2D
 	private Vector2 Velocity = new Vector2();
 	private bool isInAir = false;
 	[Export] public PackedScene GhostPlayerInstance;
-
 	private AnimatedSprite animatedSprite;
+	public int Health = 5;
+	private int FacingDirection = 0;
+	private bool isTakingDamage = false;
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
@@ -38,7 +40,7 @@ public class Adventurer : KinematicBody2D
 			if (Input.IsActionJustPressed("Jump"))
 			{
 				Velocity.y = -JumpVelocity;
-				animatedSprite.Play("jump");
+				animatedSprite.Play("Jump");
 				isInAir = true;
 			}
 			else
@@ -79,20 +81,20 @@ public class Adventurer : KinematicBody2D
 
 	private void processMovement(float delta)
 	{
-		int Direction = 0;
+		FacingDirection = 0;
 		if (Input.IsActionPressed("Left"))
 		{
-			Direction -= 1;
+			FacingDirection -= 1;
 			animatedSprite.FlipH = true;
 		}
 		if (Input.IsActionPressed("Right"))
 		{
-			Direction += 1;
+			FacingDirection += 1;
 			animatedSprite.FlipH = false;
 		}
-		if (Direction != 0)
+		if (FacingDirection != 0)
 		{
-			Velocity.x = Mathf.Lerp(Velocity.x, Direction * Speed, Acceleration);
+			Velocity.x = Mathf.Lerp(Velocity.x, FacingDirection * Speed, Acceleration);
 			if (!isInAir)
 				animatedSprite.Play("Run");
 		}
@@ -154,5 +156,13 @@ public class Adventurer : KinematicBody2D
 			DashTimer = DashTimerReset;
 			isDashAvailable = false;
 		}	
+	}
+
+	public void TakeDamage()
+	{
+		GD.Print("Adventurer has taken Damage");
+		Health -= 1;
+		GD.Print("Current Health: " + Health);
+		Velocity = MoveAndSlide(new Vector2(400f * -FacingDirection, -50), Vector2.Up);
 	}
 }
