@@ -24,6 +24,9 @@ public class Adventurer : KinematicBody2D
 	private int FacingDirection = 0;
 	private bool isTakingDamage = false;
 
+	[Signal]
+	public delegate void Death();
+
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
@@ -201,6 +204,13 @@ public class Adventurer : KinematicBody2D
 			animatedSprite.Stop();
 			Hide();
 			GD.Print("Animation Finished");
+			EmitSignal(nameof(Death));
 		}
+	}
+
+	public void RespawnPlayer()
+	{
+		Show();
+		Health = 5;
 	}
 }
