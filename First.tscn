@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles_flipped.png" type="Texture" id=1]
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://GhostPlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Legacy-Dungeon/tile143.png" type="Texture" id=6]
 [ext_resource path="res://Spikes.cs" type="Script" id=7]
+[ext_resource path="res://Adventurer-Hand-Combat/adventurer-hand-combat-Sheet.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
@@ -781,6 +782,34 @@ points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 8.5 )
 
+[sub_resource type="AtlasTexture" id=150]
+atlas = ExtResource( 8 )
+region = Rect2( 250, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=151]
+atlas = ExtResource( 8 )
+region = Rect2( 300, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=152]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=153]
+atlas = ExtResource( 8 )
+region = Rect2( 50, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=154]
+atlas = ExtResource( 8 )
+region = Rect2( 100, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=155]
+atlas = ExtResource( 8 )
+region = Rect2( 150, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=156]
+atlas = ExtResource( 8 )
+region = Rect2( 200, 185, 50, 37 )
+
 [sub_resource type="AtlasTexture" id=141]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 50, 37 )
@@ -877,8 +906,29 @@ region = Rect2( 300, 111, 50, 37 )
 atlas = ExtResource( 3 )
 region = Rect2( 0, 148, 50, 37 )
 
+[sub_resource type="AtlasTexture" id=146]
+atlas = ExtResource( 8 )
+region = Rect2( 250, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=147]
+atlas = ExtResource( 8 )
+region = Rect2( 300, 148, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=148]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 185, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=149]
+atlas = ExtResource( 8 )
+region = Rect2( 50, 185, 50, 37 )
+
 [sub_resource type="SpriteFrames" id=83]
 animations = [ {
+"frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ) ],
 "loop": true,
 "name": "Idle",
@@ -898,10 +948,15 @@ animations = [ {
 "loop": true,
 "name": "Slide",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ) ],
+"loop": true,
+"name": "TakeDamage",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=145]
-extents = Vector2( 8, 4 )
+extents = Vector2( 5, 4 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -958,7 +1013,8 @@ texture = ExtResource( 6 )
 [node name="Area2D" type="Area2D" parent="Spikes"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Area2D"]
-position = Vector2( 0, 4 )
+position = Vector2( -1, 4 )
 shape = SubResource( 145 )
 
+[connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Spikes/Area2D" to="Spikes" method="_on_Area2D_body_entered"]

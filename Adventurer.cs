@@ -23,6 +23,7 @@ public class Adventurer : KinematicBody2D
 	public int Health = 5;
 	private int FacingDirection = 0;
 	private bool isTakingDamage = false;
+
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
@@ -30,68 +31,78 @@ public class Adventurer : KinematicBody2D
 
 	public override void _PhysicsProcess(float delta)
 	{
-		
-		if (!isDashing)
+		if (Health > 0)
 		{
-			processMovement(delta);
-		}
-		if (IsOnFloor())
-		{
-			if (Input.IsActionJustPressed("Jump"))
+			if (!isDashing)
 			{
-				Velocity.y = -JumpVelocity;
-				animatedSprite.Play("Jump");
-				isInAir = true;
+				processMovement(delta);
+			}
+
+			if (IsOnFloor())
+			{
+				if (Input.IsActionJustPressed("Jump"))
+				{
+					Velocity.y = -JumpVelocity;
+					animatedSprite.Play("Jump");
+					isInAir = true;
+				}
+				else
+				{
+					isInAir = false;
+				}
+
+				isDashAvailable = true;
+			}
+
+			processWallJump(delta);
+
+			if (isDashAvailable)
+			{
+				processDash();
+			}
+
+			if (isDashing)
+			{
+				DashTimer -= delta;
+				GhostPlayer ghost = GhostPlayerInstance.Instance() as GhostPlayer;
+				Owner.AddChild(ghost);
+				if (ghost != null)
+					ghost.GlobalPosition = this.GlobalPosition;
+				if (ghost != null)
+					ghost.SetHValue(animatedSprite.FlipH);
+				if (DashTimer <= 0)
+				{
+					isDashing = false;
+					Velocity = new Vector2(0, 0);
+				}
 			}
 			else
 			{
-				isInAir = false;
+				Velocity.y += Gravity * delta;
 			}
-			isDashAvailable = true;
+
+			MoveAndSlide(Velocity, Vector2.Up);
 		}
-		
-		processWallJump(delta);
-		
-		if (isDashAvailable)
-		{
-			processDash();
-		}
-		if (isDashing)
-		{
-			DashTimer -= delta;
-			GhostPlayer ghost = GhostPlayerInstance.Instance() as GhostPlayer;
-			Owner.AddChild(ghost);
-			if (ghost != null) 
-				ghost.GlobalPosition = this.GlobalPosition;
-			if (ghost != null) 
-				ghost.SetHValue(animatedSprite.FlipH);
-			if (DashTimer <= 0)
-			{
-				isDashing = false;
-				Velocity = new Vector2(0, 0);
-			}
-		}
-		else
-		{
-			Velocity.y += Gravity * delta;	
-		}
-		
-		MoveAndSlide(Velocity, Vector2.Up);
 	}
 
 	private void processMovement(float delta)
 	{
 		FacingDirection = 0;
-		if (Input.IsActionPressed("Left"))
+		if (!isTakingDamage)
 		{
-			FacingDirection -= 1;
-			animatedSprite.FlipH = true;
+			if (Input.IsActionPressed("Left"))
+			{
+				FacingDirection -= 1;
+				animatedSprite.FlipH = true;
+			}
+
+			if (Input.IsActionPressed("Right"))
+			{
+				FacingDirection += 1;
+				animatedSprite.FlipH = false;
+			}
 		}
-		if (Input.IsActionPressed("Right"))
-		{
-			FacingDirection += 1;
-			animatedSprite.FlipH = false;
-		}
+
 		if (FacingDirection != 0)
 		{
 			Velocity.x = Mathf.Lerp(Velocity.x, FacingDirection * Speed, Acceleration);
@@ -101,8 +112,12 @@ public class Adventurer : KinematicBody2D
 		else
 		{
 			Velocity.x = Mathf.Lerp(Velocity.x, 0, Friction);
-			if(!isInAir)
-				animatedSprite.Play("Idle");
+			if (Velocity.x < 5 && Velocity.x > -5)
+			{
+				if (!isInAir)
+					animatedSprite.Play("Idle");
+				isTakingDamage = false;
+			}
 		}
 	}
 
@@ -117,7 +132,7 @@ public class Adventurer : KinematicBody2D
 		else if (Input.IsActionJustPressed("Jump") && GetNode<RayCast2D>("RayCastRight").IsColliding())
 		{
 			Velocity.y = -JumpVelocity;
-			Velocity.x = -JumpVelocity;	
+			Velocity.x = -JumpVelocity;
 			animatedSprite.FlipH = true;
 		}
 	}
@@ -131,31 +146,36 @@ public class Adventurer : KinematicBody2D
 				Velocity.x = -DashSpeed;
 				isDashing = true;
 			}
+
 			if (Input.IsActionPressed("Right"))
 			{
 				Velocity.x = DashSpeed;
 				isDashing = true;
-			}	
+			}
+
 			if (Input.IsActionPressed("Up"))
 			{
 				Velocity.y = -DashSpeed;
 				isDashing = true;
 			}
+
 			if (Input.IsActionPressed("Right") && Input.IsActionPressed("Up"))
 			{
 				Velocity.x = DashSpeed;
 				Velocity.y = -DashSpeed;
 				isDashing = true;
-			}	
+			}
+
 			if (Input.IsActionPressed("Left") && Input.IsActionPressed("Up"))
 			{
 				Velocity.x = -DashSpeed;
 				Velocity.y = -DashSpeed;
 				isDashing = true;
 			}
+
 			DashTimer = DashTimerReset;
 			isDashAvailable = false;
-		}	
+		}
 	}
 
 	public void TakeDamage()
@@ -163,6 +183,24 @@ public class Adventurer : KinematicBody2D
 		GD.Print("Adventurer has taken Damage");
 		Health -= 1;
 		GD.Print("Current Health: " + Health);
-		Velocity = MoveAndSlide(new Vector2(400f * -FacingDirection, -50), Vector2.Up);
+		Velocity = MoveAndSlide(new Vector2(300f * -FacingDirection, -50), Vector2.Up);
+		isTakingDamage = true;
+		animatedSprite.Play("TakeDamage");
+		if (Health <= 0)
+		{
+			Health = 0;
+			animatedSprite.Play("Death");
+			GD.Print("Player has Died");
+		}
+	}
+	
+	private void _on_AnimatedSprite_animation_finished()
+	{
+		if (animatedSprite.Animation == "Death")
+		{
+			animatedSprite.Stop();
+			Hide();
+			GD.Print("Animation Finished");
+		}
 	}
 }
