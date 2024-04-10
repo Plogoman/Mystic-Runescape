@@ -213,4 +213,7 @@ rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 10 )
 
+[node name="RayCastDown" type="RayCast2D" parent="."]
+cast_to = Vector2( 0, 10 )
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

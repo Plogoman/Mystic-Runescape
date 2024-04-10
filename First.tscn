@@ -1,15 +1,17 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles_flipped.png" type="Texture" id=1]
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles.png" type="Texture" id=2]
-[ext_resource path="res://Adventurer/adventurer-Sheet.png" type="Texture" id=3]
-[ext_resource path="res://Adventurer.cs" type="Script" id=4]
-[ext_resource path="res://GhostPlayer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Legacy-Dungeon/tile143.png" type="Texture" id=6]
-[ext_resource path="res://Spikes.cs" type="Script" id=7]
-[ext_resource path="res://Adventurer-Hand-Combat/adventurer-hand-combat-Sheet.png" type="Texture" id=8]
+[ext_resource path="res://Adventurer/enemy/Normal Attack.png" type="Texture" id=3]
+[ext_resource path="res://ArcherEnemy.cs" type="Script" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spikes.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Adventurer/enemy/Idle and running.png" type="Texture" id=7]
+[ext_resource path="res://Arrow.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameManager.cs" type="Script" id=9]
 [ext_resource path="res://RespawnPoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Legacy-Dungeon/tile002.png" type="Texture" id=11]
+[ext_resource path="res://Platform1.cs" type="Script" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
@@ -781,184 +783,139 @@ points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
 } ]
 32/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 6, 8.5 )
+[sub_resource type="AtlasTexture" id=116]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=150]
-atlas = ExtResource( 8 )
-region = Rect2( 250, 148, 50, 37 )
+[sub_resource type="AtlasTexture" id=117]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=151]
-atlas = ExtResource( 8 )
-region = Rect2( 300, 148, 50, 37 )
+[sub_resource type="AtlasTexture" id=118]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=152]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 185, 50, 37 )
+[sub_resource type="AtlasTexture" id=119]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=153]
-atlas = ExtResource( 8 )
-region = Rect2( 50, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=154]
-atlas = ExtResource( 8 )
-region = Rect2( 100, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=155]
-atlas = ExtResource( 8 )
-region = Rect2( 150, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=156]
-atlas = ExtResource( 8 )
-region = Rect2( 200, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=141]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=142]
-atlas = ExtResource( 3 )
-region = Rect2( 50, 0, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=143]
-atlas = ExtResource( 3 )
-region = Rect2( 100, 0, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=144]
-atlas = ExtResource( 3 )
-region = Rect2( 150, 0, 50, 37 )
+[sub_resource type="AtlasTexture" id=120]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 128, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=121]
-atlas = ExtResource( 3 )
-region = Rect2( 50, 74, 50, 37 )
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 192, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=122]
-atlas = ExtResource( 3 )
-region = Rect2( 100, 74, 50, 37 )
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 256, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=123]
-atlas = ExtResource( 3 )
-region = Rect2( 150, 74, 50, 37 )
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 320, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=124]
-atlas = ExtResource( 3 )
-region = Rect2( 200, 74, 50, 37 )
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 384, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=125]
-atlas = ExtResource( 3 )
-region = Rect2( 250, 74, 50, 37 )
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 448, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=126]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 300, 74, 50, 37 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=127]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 111, 50, 37 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=128]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 50, 111, 50, 37 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=129]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 100, 111, 50, 37 )
+region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=130]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 50, 37, 50, 37 )
+region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=131]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 100, 37, 50, 37 )
+region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=132]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 150, 37, 50, 37 )
+region = Rect2( 384, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=133]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 200, 37, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=134]
-atlas = ExtResource( 3 )
-region = Rect2( 250, 37, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=135]
-atlas = ExtResource( 3 )
-region = Rect2( 300, 37, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=136]
-atlas = ExtResource( 3 )
-region = Rect2( 150, 111, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=137]
-atlas = ExtResource( 3 )
-region = Rect2( 200, 111, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=138]
-atlas = ExtResource( 3 )
-region = Rect2( 250, 111, 50, 37 )
+region = Rect2( 448, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=139]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 300, 111, 50, 37 )
+region = Rect2( 0, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=140]
+flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 148, 50, 37 )
+region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=146]
-atlas = ExtResource( 8 )
-region = Rect2( 250, 148, 50, 37 )
+[sub_resource type="AtlasTexture" id=141]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=147]
-atlas = ExtResource( 8 )
-region = Rect2( 300, 148, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=148]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=149]
-atlas = ExtResource( 8 )
-region = Rect2( 50, 185, 50, 37 )
-
-[sub_resource type="SpriteFrames" id=83]
+[sub_resource type="SpriteFrames" id=137]
 animations = [ {
-"frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
-"loop": true,
-"name": "Death",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ) ],
+"frames": [ SubResource( 116 ), SubResource( 117 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 118 ), SubResource( 119 ), SubResource( 120 ), SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ) ],
+"loop": true,
+"name": "Running",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ) ],
+"frames": [ SubResource( 126 ), SubResource( 127 ), SubResource( 128 ), SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ), SubResource( 133 ) ],
 "loop": true,
-"name": "Jump",
+"name": "drawback",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 130 ), SubResource( 131 ), SubResource( 132 ), SubResource( 133 ), SubResource( 134 ), SubResource( 135 ) ],
+"frames": [ SubResource( 139 ), SubResource( 140 ), SubResource( 141 ) ],
 "loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 136 ), SubResource( 137 ), SubResource( 138 ), SubResource( 139 ), SubResource( 140 ) ],
-"loop": true,
-"name": "Slide",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ) ],
-"loop": true,
-"name": "TakeDamage",
+"name": "shoot",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=145]
-extents = Vector2( 5, 4 )
+[sub_resource type="CircleShape2D" id=138]
+radius = 73.0
+
+[sub_resource type="RectangleShape2D" id=142]
+extents = Vector2( 6.20438, 2 )
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource( 9 )
@@ -972,56 +929,75 @@ cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 131072, 13, 0, 196608, 18, 0, 262144, 18, 0, 327680, 18, 0, 327710, 2, 0, 327711, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327716, 3, 0, 327717, 3, 0, 327718, 3, 0, 327719, 3, 0, 327720, 3, 0, 327721, 3, 0, 327722, 13, 0, 393216, 18, 0, 393246, 5, 0, 393247, 31, 0, 393248, 20, 0, 393249, 20, 0, 393250, 23, 0, 393251, 20, 0, 393252, 20, 0, 393253, 31, 0, 393254, 20, 0, 393255, 20, 0, 393256, 22, 0, 393257, 20, 0, 393258, 18, 0, 458752, 18, 0, 458782, 5, 0, 458783, 20, 0, 458784, 27, 0, 458785, 20, 0, 458786, 20, 0, 458787, 20, 0, 458788, 27, 0, 458789, 20, 0, 458790, 23, 0, 458791, 20, 0, 458792, 20, 0, 458793, 23, 0, 458794, 18, 0, 524288, 18, 0, 524318, 5, 0, 524319, 26, 0, 524320, 26, 0, 524321, 20, 0, 524322, 22, 0, 524323, 20, 0, 524324, 26, 0, 524325, 20, 0, 524326, 20, 0, 524327, 27, 0, 524328, 20, 0, 524329, 20, 0, 524330, 18, 0, 589824, 18, 0, 589854, 5, 0, 589855, 20, 0, 589856, 20, 0, 589857, 20, 0, 589858, 20, 0, 589859, 20, 0, 589860, 20, 0, 589861, 22, 0, 589862, 20, 0, 589863, 22, 0, 589864, 20, 0, 589865, 20, 0, 589866, 18, 0, 655360, 18, 0, 655370, 2, 0, 655371, 3, 0, 655372, 3, 0, 655373, 12, 0, 655374, 3, 0, 655375, 3, 0, 655376, 12, 0, 655377, 3, 0, 655378, 3, 0, 655379, 13, 0, 655390, 5, 0, 655391, 20, 0, 655392, 22, 0, 655393, 27, 0, 655394, 20, 0, 655395, 23, 0, 655396, 20, 0, 655397, 31, 0, 655398, 20, 0, 655399, 20, 0, 655400, 20, 0, 655401, 22, 0, 655402, 18, 0, 720896, 18, 0, 720906, 5, 0, 720907, 27, 0, 720908, 20, 0, 720909, 29, 0, 720910, 20, 0, 720911, 30, 0, 720912, 20, 0, 720913, 20, 0, 720914, 30, 0, 720915, 18, 0, 720926, 5, 0, 720927, 26, 0, 720928, 20, 0, 720929, 20, 0, 720930, 31, 0, 720931, 20, 0, 720932, 20, 0, 720933, 27, 0, 720934, 20, 0, 720935, 23, 0, 720936, 20, 0, 720937, 20, 0, 720938, 18, 0, 786432, 18, 0, 786442, 5, 0, 786443, 20, 0, 786444, 21, 0, 786445, 20, 0, 786446, 26, 0, 786447, 20, 0, 786448, 20, 0, 786449, 21, 0, 786450, 20, 0, 786451, 18, 0, 786462, 5, 0, 786463, 20, 0, 786464, 23, 0, 786465, 26, 0, 786466, 20, 0, 786467, 27, 0, 786468, 20, 0, 786469, 26, 0, 786470, 23, 0, 786471, 20, 0, 786472, 22, 0, 786473, 20, 0, 786474, 18, 0, 851968, 18, 0, 851978, 5, 0, 851979, 30, 0, 851980, 20, 0, 851981, 20, 0, 851982, 20, 0, 851983, 30, 0, 851984, 29, 0, 851985, 20, 0, 851986, 20, 0, 851987, 18, 0, 851998, 5, 0, 851999, 20, 0, 852000, 27, 0, 852001, 20, 0, 852002, 20, 0, 852003, 20, 0, 852004, 22, 0, 852005, 20, 0, 852006, 20, 0, 852007, 31, 0, 852008, 20, 0, 852009, 26, 0, 852010, 18, 0, 917504, 18, 0, 917514, 5, 0, 917515, 20, 0, 917516, 26, 0, 917517, 20, 0, 917518, 21, 0, 917519, 20, 0, 917520, 20, 0, 917521, 29, 0, 917522, 20, 0, 917523, 18, 0, 917534, 5, 0, 917535, 31, 0, 917536, 20, 0, 917537, 20, 0, 917538, 22, 0, 917539, 20, 0, 917540, 20, 0, 917541, 20, 0, 917542, 27, 0, 917543, 20, 0, 917544, 23, 0, 917545, 20, 0, 917546, 18, 0, 983040, 18, 0, 983050, 5, 0, 983051, 20, 0, 983052, 20, 0, 983053, 29, 0, 983054, 20, 0, 983055, 20, 0, 983056, 26, 0, 983057, 20, 0, 983058, 27, 0, 983059, 18, 0, 983070, 5, 0, 983071, 20, 0, 983072, 23, 0, 983073, 20, 0, 983074, 20, 0, 983075, 20, 0, 983076, 23, 0, 983077, 20, 0, 983078, 26, 0, 983079, 20, 0, 983080, 20, 0, 983081, 26, 0, 983082, 18, 0, 1048576, 18, 0, 1048586, 5, 0, 1048587, 27, 0, 1048588, 21, 0, 1048589, 20, 0, 1048590, 30, 0, 1048591, 20, 0, 1048592, 27, 0, 1048593, 30, 0, 1048594, 20, 0, 1048595, 18, 0, 1048606, 5, 0, 1048607, 20, 0, 1048608, 20, 0, 1048609, 27, 0, 1048610, 20, 0, 1048611, 20, 0, 1048612, 22, 0, 1048613, 20, 0, 1048614, 20, 0, 1048615, 20, 0, 1048616, 27, 0, 1048617, 20, 0, 1048618, 18, 0, 1114112, 18, 0, 1114122, 5, 0, 1114123, 20, 0, 1114124, 20, 0, 1114125, 20, 0, 1114126, 26, 0, 1114127, 20, 0, 1114128, 21, 0, 1114129, 20, 0, 1114130, 20, 0, 1114131, 18, 0, 1114142, 5, 0, 1114143, 20, 0, 1114144, 20, 0, 1114145, 20, 0, 1114146, 31, 0, 1114147, 20, 0, 1114148, 20, 0, 1114149, 20, 0, 1114150, 31, 0, 1114151, 20, 0, 1114152, 20, 0, 1114153, 20, 0, 1114154, 18, 0, 1179648, 18, 0, 1179658, 5, 0, 1179659, 19, 0, 1179660, 21, 0, 1179661, 19, 0, 1179662, 25, 0, 1179663, 19, 0, 1179664, 19, 0, 1179665, 26, 0, 1179666, 19, 0, 1179667, 19, 0, 1179668, 3, 0, 1179669, 3, 0, 1179670, 3, 0, 1179671, 12, 0, 1179672, 3, 0, 1179673, 3, 0, 1179674, 12, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 19, 0, 1179679, 20, 0, 1179680, 31, 0, 1179681, 20, 0, 1179682, 20, 0, 1179683, 31, 0, 1179684, 20, 0, 1179685, 20, 0, 1179686, 26, 0, 1179687, 20, 0, 1179688, 31, 0, 1179689, 20, 0, 1179690, 18, 0, 1245184, 19, 0, 1245185, 3, 0, 1245186, 3, 0, 1245187, 3, 0, 1245188, 3, 0, 1245189, 3, 0, 1245190, 3, 0, 1245191, 3, 0, 1245192, 3, 0, 1245193, 3, 0 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 38, 141 )
+[node name="Player" parent="." instance=ExtResource( 5 )]
+
+[node name="Spikes" parent="." instance=ExtResource( 6 )]
+
+[node name="RespawnPoint" parent="." instance=ExtResource( 10 )]
+position = Vector2( 38, 119 )
+
+[node name="ArcherEnemy" type="Node2D" parent="."]
+position = Vector2( 302, 31 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
-GhostPlayerInstance = ExtResource( 5 )
+arrow = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -1, 1.5 )
-shape = SubResource( 10 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ArcherEnemy"]
+scale = Vector2( 0.4375, 0.453125 )
+frames = SubResource( 137 )
+animation = "shoot"
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 2.19346e-07, 0 )
-scale = Vector2( 0.56, 0.540541 )
-frames = SubResource( 83 )
-animation = "Idle"
+[node name="Detection Radius" type="Area2D" parent="ArcherEnemy"]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 0.3, 0.3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArcherEnemy/Detection Radius"]
+shape = SubResource( 138 )
 
-[node name="RayCastLeft" type="RayCast2D" parent="Player"]
-rotation = 1.5708
-enabled = true
-cast_to = Vector2( 0, 10 )
+[node name="ProjectileSpawn" type="Position2D" parent="ArcherEnemy"]
+position = Vector2( 3.3, -1 )
 
-[node name="RayCastRight" type="RayCast2D" parent="Player"]
-rotation = -1.5708
-enabled = true
-cast_to = Vector2( 0, 10 )
+[node name="Arrow" parent="." instance=ExtResource( 8 )]
+position = Vector2( 99, 200 )
 
-[node name="Spikes" type="Node2D" parent="."]
-position = Vector2( 165, 135 )
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Platform1" type="Node2D" parent="."]
+position = Vector2( 60, 138 )
+script = ExtResource( 12 )
 
-[node name="Sprite" type="Sprite" parent="Spikes"]
-texture = ExtResource( 6 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Platform1"]
+scale = Vector2( 1.37, 1 )
 
-[node name="Area2D" type="Area2D" parent="Spikes"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1/KinematicBody2D"]
+position = Vector2( 1.09489, 6 )
+shape = SubResource( 142 )
+one_way_collision = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Area2D"]
-position = Vector2( -1, 4 )
-shape = SubResource( 145 )
+[node name="Sprite" type="Sprite" parent="Platform1/KinematicBody2D"]
+position = Vector2( 1, 6 )
+scale = Vector2( 0.875, 0.25 )
+texture = ExtResource( 11 )
 
-[node name="RespawnPoint" parent="." instance=ExtResource( 10 )]
+[node name="Tween" type="Tween" parent="Platform1/KinematicBody2D"]
+
+[node name="MovementPostion" type="Node2D" parent="Platform1"]
+
+[node name="Location1" type="Position2D" parent="Platform1/MovementPostion"]
+position = Vector2( 1, 6 )
+
+[node name="Location2" type="Position2D" parent="Platform1/MovementPostion"]
+position = Vector2( 1, -63 )
+
+[node name="Location3" type="Position2D" parent="Platform1/MovementPostion"]
+position = Vector2( -43, -63 )
+
+[node name="Location4" type="Position2D" parent="Platform1/MovementPostion"]
+position = Vector2( -19, -114 )
+
+[node name="Location5" type="Position2D" parent="Platform1/MovementPostion"]
+position = Vector2( 1, -63 )
 
 [connection signal="Death" from="Player" to="." method="_on_Player_Death"]
-[connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="body_entered" from="Spikes/Area2D" to="Spikes" method="_on_Area2D_body_entered"]
+[connection signal="animation_finished" from="ArcherEnemy/AnimatedSprite" to="ArcherEnemy" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="ArcherEnemy/Detection Radius" to="ArcherEnemy" method="_on_Detection_Radius_body_entered"]
+[connection signal="body_exited" from="ArcherEnemy/Detection Radius" to="ArcherEnemy" method="_on_Detection_Radius_body_exited"]
+[connection signal="tween_completed" from="Platform1/KinematicBody2D/Tween" to="Platform1" method="_on_Tween_tween_completed"]

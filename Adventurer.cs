@@ -43,7 +43,12 @@ public class Adventurer : KinematicBody2D
 
 			if (IsOnFloor())
 			{
-				if (Input.IsActionJustPressed("Jump"))
+				if (GetNode<RayCast2D>("RayCastDown").IsColliding() && Input.IsActionPressed("Down") &&
+				    Input.IsActionJustPressed("Jump"))
+				{
+					Position = new Vector2(Position.x, Position.y + 2);
+				}
+				else if (Input.IsActionJustPressed("Jump"))
 				{
 					Velocity.y = -JumpVelocity;
 					animatedSprite.Play("Jump");

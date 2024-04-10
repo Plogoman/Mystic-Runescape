@@ -22,9 +22,9 @@ namespace MysticRunescape
 //  }
         public void RespawnPlayer()
         {
-            Adventurer PC = GetNode<Adventurer>("Player");
-            PC.GlobalPosition = RespawnPoint.GlobalPosition;
-            PC.RespawnPlayer();
+            Adventurer pc = GetNode<Adventurer>("Player");
+            pc.GlobalPosition = RespawnPoint.GlobalPosition;
+            pc.RespawnPlayer();
         }
 
         private void _on_Player_Death()
