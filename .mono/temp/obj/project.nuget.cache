@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SsbSZblpi2yDQ2MueUgQKGiUCV6JuSIWI+ySRqh6OwfTTUQclxvRZCoFTIPuWGaJWVQVZUog/j+2Xl/d4t5uCw==",
+  "dgSpecHash": "upZGNnQrXre+ymCojj+HpwzoLI4wAz17ekTYypEqR0pxhC9QDxT7tHgH3o7hCkreEhpNaTeztWZ485tEMmg6Rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\The Professor\\Desktop\\oop\\Mystic-Runescape-development\\Mystic- Runescape.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\The Professor\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
-    "C:\\Users\\The Professor\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Mystic-Runescape\\Mystic- Runescape.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

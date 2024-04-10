@@ -28,3 +28,13 @@ C:\Users\The Professor\Desktop\oop\Mystic-Runescape-development\.mono\temp\obj\D
 C:\Users\The Professor\Desktop\oop\Mystic-Runescape-development\.mono\temp\obj\Debug\Mystic- Runescape.dll
 C:\Users\The Professor\Desktop\oop\Mystic-Runescape-development\.mono\temp\obj\Debug\Mystic- Runescape.pdb
 C:\Users\The Professor\Desktop\oop\Mystic-Runescape-development\.mono\temp\obj\Debug\Mystic- Runescape.sourcelink.json
+D:\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.dll
+D:\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.pdb
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.AssemblyReference.cache
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfoInputs.cache
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfo.cs
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.CoreCompileInputs.cache
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.sourcelink.json
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.dll
+D:\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.pdb

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\The Professor\\Desktop\\oop\\Mystic-Runescape-development\\Mystic- Runescape.csproj": {}
+    "D:\\Mystic-Runescape\\Mystic- Runescape.csproj": {}
   },
   "projects": {
-    "C:\\Users\\The Professor\\Desktop\\oop\\Mystic-Runescape-development\\Mystic- Runescape.csproj": {
+    "D:\\Mystic-Runescape\\Mystic- Runescape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\The Professor\\Desktop\\oop\\Mystic-Runescape-development\\Mystic- Runescape.csproj",
+        "projectUniqueName": "D:\\Mystic-Runescape\\Mystic- Runescape.csproj",
         "projectName": "Mystic- Runescape",
-        "projectPath": "C:\\Users\\The Professor\\Desktop\\oop\\Mystic-Runescape-development\\Mystic- Runescape.csproj",
-        "packagesPath": "C:\\Users\\The Professor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\The Professor\\Desktop\\oop\\Mystic-Runescape-development\\.mono\\temp\\obj\\",
+        "projectPath": "D:\\Mystic-Runescape\\Mystic- Runescape.csproj",
+        "packagesPath": "C:\\Users\\w.i\\.nuget\\packages\\",
+        "outputPath": "D:\\Mystic-Runescape\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\The Professor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\w.i\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,20 +39,15 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "default"
         }
       },
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "dependencies": {
-            "Microsoft.NETFramework.ReferenceAssemblies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.7.23376.3\\RuntimeIdentifierGraph.json"
         }
       }
     }
