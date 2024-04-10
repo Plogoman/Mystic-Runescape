@@ -184,16 +184,19 @@ public class Adventurer : KinematicBody2D
 	public void TakeDamage()
 	{
 		GD.Print("Adventurer has taken Damage");
-		Health -= 1;
-		GD.Print("Current Health: " + Health);
-		Velocity = MoveAndSlide(new Vector2(300f * -FacingDirection, -50), Vector2.Up);
-		isTakingDamage = true;
-		animatedSprite.Play("TakeDamage");
-		if (Health <= 0)
+		if (Health > 0)
 		{
-			Health = 0;
-			animatedSprite.Play("Death");
-			GD.Print("Player has Died");
+			Health -= 1;
+			GD.Print("Current Health: " + Health);
+			Velocity = MoveAndSlide(new Vector2(300f * -FacingDirection, -50), Vector2.Up);
+			isTakingDamage = true;
+			animatedSprite.Play("TakeDamage");
+			if (Health <= 0)
+			{
+				Health = 0;
+				animatedSprite.Play("Death");
+				GD.Print("Player has Died");
+			}
 		}
 	}
 	
