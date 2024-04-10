@@ -6,9 +6,9 @@ public class Arrow : Node2D
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    private int speed = 150;
+    private int Speed = 150;
 
-    private float lifeSpan = 20;
+    private float LifeSpan = 20;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -18,9 +18,9 @@ public class Arrow : Node2D
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-        Position += Transform.x * delta * speed;
-        lifeSpan -= delta;
-        if (lifeSpan < 0)
+        Position += Transform.x * delta * Speed;
+        LifeSpan -= delta;
+        if (LifeSpan < 0)
         {
             QueueFree();
         }
@@ -33,8 +33,8 @@ public class Arrow : Node2D
         {
             if (body is Adventurer)
             {
-                Adventurer pc = body as Adventurer;
-                pc.TakeDamage();
+                Adventurer PC = body as Adventurer;
+                PC.TakeDamage();
             }
         }
     }
