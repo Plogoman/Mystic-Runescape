@@ -3,7 +3,7 @@ using Godot;
 public class Adventurer : KinematicBody2D
 {
 	private const float Speed = 60.0f;
-	private const float Gravity = 200.0f;
+	private const float Gravity = 600.0f;
 	private const float JumpVelocity = 200.0f;
 	private const float Friction = 0.1f;
 	private const float Acceleration = 0.25f;
@@ -20,12 +20,19 @@ public class Adventurer : KinematicBody2D
 	[Export] public PackedScene GhostPlayerInstance;
 	private AnimatedSprite animatedSprite;
 	public int Health = 5;
-	private int FacingDirection = 0;
+	private Vector2 FacingDirection = new Vector2(0,0);
 	private bool isTakingDamage = false;
 
 	[Signal]
 	public delegate void Death();
 
+	private float Mana = 100f;
+
+	private float MaxMana = 100f;
+
+	private float ManaTimerReset = 2f;
+
+	private float ManaTimer = 2f;
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
@@ -61,11 +68,9 @@ public class Adventurer : KinematicBody2D
 				isDashAvailable = true;
 			}
 
-			processWallJump(delta);
-
-			if (isDashAvailable)
+			if (!IsOnFloor())
 			{
-				processDash();
+				processWallJump(delta);
 			}
 
 			if (isDashing)
@@ -88,32 +93,74 @@ public class Adventurer : KinematicBody2D
 				Velocity.y += Gravity * delta;
 			}
 
+			if (Mana < 100 && ManaTimer <= 0)
+			{
+				UpdateMana(delta * 1);
+				GD.Print(Mana);
+			}
+			else if(Mana != 100)
+			{
+				ManaTimer -= delta * 1;
+			}
+
 			MoveAndSlide(Velocity, Vector2.Up);
 		}
 	}
 
 	private void processMovement(float delta)
 	{
-		FacingDirection = 0;
+		FacingDirection = new Vector2(0, 0);
 		if (!isTakingDamage)
 		{
 			if (Input.IsActionPressed("Left"))
 			{
-				FacingDirection -= 1;
+				FacingDirection.x -= 1;
 				animatedSprite.FlipH = true;
 			}
 
 			if (Input.IsActionPressed("Right"))
 			{
-				FacingDirection += 1;
+				FacingDirection.x += 1;
 				animatedSprite.FlipH = false;
+			}
+			
+			if (Input.IsActionPressed("Up"))
+			{
+				FacingDirection.y = -1;
+			}
+			
+			if (Input.IsActionPressed("Down"))
+			{
+				FacingDirection.y = 1;
+			}
+			
+			if (Input.IsActionJustPressed("Dash"))
+			{
+				if (isDashAvailable && Mana >= 10)
+				{
+					isDashing = true;
+					DashTimer = DashTimerReset;
+					isDashAvailable = false;
+					UpdateMana(-10);
+					GD.Print(Mana);
+					ManaTimer = ManaTimerReset;
+				}
 			}
 		}
 
-		if (FacingDirection != 0)
+		if (FacingDirection.x != 0 || FacingDirection.y!=0)
 		{
-			Velocity.x = Mathf.Lerp(Velocity.x, FacingDirection * Speed, Acceleration);
-			if (!isInAir)
+			if (isDashing)
+			{
+				Velocity.x = DashSpeed * FacingDirection.x;
+				Velocity.y = DashSpeed * FacingDirection.y;
+			}
+			else
+			{
+				Velocity.x = Mathf.Lerp(Velocity.x, FacingDirection.x * Speed, Acceleration);
+			}
+
+			if (!isInAir && FacingDirection.x != 0)
 				animatedSprite.Play("Run");
 		}
 		else
@@ -143,48 +190,7 @@ public class Adventurer : KinematicBody2D
 			animatedSprite.FlipH = true;
 		}
 	}
-
-	private void processDash()
-	{
-		if (Input.IsActionJustPressed("Dash"))
-		{
-			if (Input.IsActionPressed("Left"))
-			{
-				Velocity.x = -DashSpeed;
-				isDashing = true;
-			}
-
-			if (Input.IsActionPressed("Right"))
-			{
-				Velocity.x = DashSpeed;
-				isDashing = true;
-			}
-
-			if (Input.IsActionPressed("Up"))
-			{
-				Velocity.y = -DashSpeed;
-				isDashing = true;
-			}
-
-			if (Input.IsActionPressed("Right") && Input.IsActionPressed("Up"))
-			{
-				Velocity.x = DashSpeed;
-				Velocity.y = -DashSpeed;
-				isDashing = true;
-			}
-
-			if (Input.IsActionPressed("Left") && Input.IsActionPressed("Up"))
-			{
-				Velocity.x = -DashSpeed;
-				Velocity.y = -DashSpeed;
-				isDashing = true;
-			}
-
-			DashTimer = DashTimerReset;
-			isDashAvailable = false;
-		}
-	}
-
+	
 	public void TakeDamage()
 	{
 		GD.Print("Adventurer has taken Damage");
@@ -192,7 +198,7 @@ public class Adventurer : KinematicBody2D
 		{
 			Health -= 1;
 			GD.Print("Current Health: " + Health);
-			Velocity = MoveAndSlide(new Vector2(300f * -FacingDirection, -50), Vector2.Up);
+			Velocity = MoveAndSlide(new Vector2(300f * -FacingDirection.x, -50), Vector2.Up);
 			isTakingDamage = true;
 			animatedSprite.Play("TakeDamage");
 			if (Health <= 0)
@@ -219,6 +225,19 @@ public class Adventurer : KinematicBody2D
 	{
 		Show();
 		Health = 5; 
+	}
+
+	public void UpdateMana(float ManaAmount)
+	{
+		Mana += ManaAmount;
+		if (Mana >= MaxMana)
+		{
+			Mana = MaxMana;
+		}
+		else if (Mana <= 0)
+		{
+			Mana = 0;
+		}
 	}
 	
 }
