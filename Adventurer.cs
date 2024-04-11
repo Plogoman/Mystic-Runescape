@@ -218,6 +218,7 @@ public class Adventurer : KinematicBody2D
 	public void RespawnPlayer()
 	{
 		Show();
-		Health = 5;
+		Health = 5; 
 	}
+	
 }

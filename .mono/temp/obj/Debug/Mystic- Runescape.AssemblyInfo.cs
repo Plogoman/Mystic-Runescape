@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mystic- Runescape")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f111823262ef446a8844f006e5019ee944b02511")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73decadf05b7d30adcfb3cf9357c8a294e3c0d98")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mystic- Runescape")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mystic- Runescape")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
