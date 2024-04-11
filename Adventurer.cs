@@ -1,10 +1,9 @@
 using Godot;
-using Godot.Collections;
 
 public class Adventurer : KinematicBody2D
 {
 	private const float Speed = 60.0f;
-	private const float Gravity = 400.0f;
+	private const float Gravity = 200.0f;
 	private const float JumpVelocity = 200.0f;
 	private const float Friction = 0.1f;
 	private const float Acceleration = 0.25f;
