@@ -1,4 +1,6 @@
+using System;
 using Godot;
+using MysticRunescape;
 
 public class Adventurer : KinematicBody2D
 {
@@ -19,7 +21,8 @@ public class Adventurer : KinematicBody2D
 	private bool isInAir = false;
 	[Export] public PackedScene GhostPlayerInstance;
 	private AnimatedSprite animatedSprite;
-	public int Health = 5;
+	public float MaxHealth = 5;
+	public float Health = 5;
 	private Vector2 FacingDirection = new Vector2(0,0);
 	private bool isTakingDamage = false;
 
@@ -36,16 +39,34 @@ public class Adventurer : KinematicBody2D
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+		GameManager.Player = this;
 	}
 
 	public override void _PhysicsProcess(float delta)
 	{
+		InterfaceManager.UpdateHealth(MaxHealth,Health);
+		InterfaceManager.UpdateMana(MaxMana,Mana);
 		if (Health > 0)
 		{
 			if (!isDashing)
 			{
 				processMovement(delta);
 			}
+
+			if (Input.IsActionJustPressed("PickUp"))
+			{
+				if (GetNode<RayCast2D>("RayCastLeft").IsColliding())
+				{
+					Node obj = (Node)GetNode<RayCast2D>("RayCastLeft").GetCollider();
+					InteractWithItem(obj);
+				}
+				else if (GetNode<RayCast2D>("RayCastRight").IsColliding())
+				{
+					Node obj = (Node)GetNode<RayCast2D>("RayCastRight").GetCollider();
+					InteractWithItem(obj);
+				}
+			}
+			
 
 			if (IsOnFloor())
 			{
@@ -104,6 +125,18 @@ public class Adventurer : KinematicBody2D
 			}
 
 			MoveAndSlide(Velocity, Vector2.Up);
+		}
+	}
+
+	private void InteractWithItem(Node obj)
+	{
+		if (obj.Owner is Pickupable)
+		{
+			if (obj.Owner is MagicPotion)
+			{
+				MagicPotion potion = obj.Owner as MagicPotion;
+				potion.UsePotion();
+			}
 		}
 	}
 
@@ -198,6 +231,7 @@ public class Adventurer : KinematicBody2D
 		{
 			Health -= 1;
 			GD.Print("Current Health: " + Health);
+			InterfaceManager.UpdateHealth(MaxHealth,Health);
 			Velocity = MoveAndSlide(new Vector2(300f * -FacingDirection.x, -50), Vector2.Up);
 			isTakingDamage = true;
 			animatedSprite.Play("TakeDamage");
@@ -225,6 +259,7 @@ public class Adventurer : KinematicBody2D
 	{
 		Show();
 		Health = 5; 
+		InterfaceManager.UpdateHealth(MaxHealth,Health);
 	}
 
 	public void UpdateMana(float ManaAmount)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles_flipped.png" type="Texture" id=1]
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Legacy-Dungeon/tile002.png" type="Texture" id=11]
 [ext_resource path="res://Platform1.cs" type="Script" id=12]
 [ext_resource path="res://SlimeEnemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://MagicPotion.tscn" type="PackedScene" id=14]
+[ext_resource path="res://InterfaceManager.cs" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
@@ -1028,6 +1030,35 @@ collision_mask = 2
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="MagicPotion" parent="." instance=ExtResource( 14 )]
+position = Vector2( 0, 6 )
+
+[node name="InterfaceManager" type="CanvasLayer" parent="."]
+script = ExtResource( 15 )
+
+[node name="MainInterface" type="Control" parent="InterfaceManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = -2.0
+margin_bottom = -4.0
+
+[node name="HealthBar" type="ProgressBar" parent="InterfaceManager/MainInterface"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -253.0
+margin_top = 13.0
+margin_right = -4.0
+margin_bottom = 27.0
+
+[node name="ManaBar" type="ProgressBar" parent="InterfaceManager/MainInterface"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -252.0
+margin_top = 37.0
+margin_right = -3.0
+margin_bottom = 51.0
 
 [connection signal="Death" from="Player" to="." method="_on_Player_Death"]
 [connection signal="animation_finished" from="ArcherEnemy/AnimatedSprite" to="ArcherEnemy" method="_on_AnimatedSprite_animation_finished"]

@@ -10,6 +10,8 @@ namespace MysticRunescape
 		[Export]
 		public Position2D RespawnPoint;
 		// Called when the node enters the scene tree for the first time.
+		public static GameManager GlobalGameManager;
+		public static Adventurer Player;
 		public override void _Ready()
 		{
 		
