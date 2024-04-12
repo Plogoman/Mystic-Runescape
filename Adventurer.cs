@@ -260,6 +260,7 @@ public class Adventurer : KinematicBody2D
 		Show();
 		Health = 5; 
 		InterfaceManager.UpdateHealth(MaxHealth,Health);
+		InterfaceManager.UpdateMana(MaxMana,Mana);
 	}
 
 	public void UpdateMana(float ManaAmount)
