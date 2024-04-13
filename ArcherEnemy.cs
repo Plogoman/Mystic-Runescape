@@ -8,11 +8,11 @@ namespace MysticRunescape
         // Declare member variables here. Examples:
         // private int a = 2;
         // private string b = "text";
-        private Adventurer Player;
+        private Adventurer player;
 
-        private bool Active = false;
+        private bool active = false;
         
-        private bool ableToShoot = true;
+        private bool abletoshoot = true;
 
         private float shootTimer = 1f;
 
@@ -23,7 +23,7 @@ namespace MysticRunescape
         private AnimatedSprite animatedSprite;
 
         [Export] 
-        public PackedScene Arrow;
+        public PackedScene arrow;
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
         {
@@ -33,9 +33,9 @@ namespace MysticRunescape
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
           public override void _Process(float delta)
           {
-              if (Active)
+              if (active)
               {
-                  var angle = GlobalPosition.AngleToPoint(Player.GlobalPosition);
+                  var angle = GlobalPosition.AngleToPoint(player.GlobalPosition);
                   if (Math.Abs(angle) > Mathf.Pi / 2)
                   {
                       animatedSprite.FlipH = false;
@@ -45,17 +45,17 @@ namespace MysticRunescape
                       animatedSprite.FlipH = true;
 
                   }
-                  if (ableToShoot)
+                  if (abletoshoot)
                   {
                       var spaceState = GetWorld2d().DirectSpaceState;
-                      Godot.Collections.Dictionary result = spaceState.IntersectRay(this.Position, Player.Position,
+                      Godot.Collections.Dictionary result = spaceState.IntersectRay(this.Position, player.Position,
                           new Godot.Collections.Array { this });
                       if (result != null)
                       {
                           if (result.Contains("collider"))
                           {
-                              this.GetNode<Position2D>("ProjectileSpawn").LookAt(Player.Position);
-                              if (result["collider"] == Player)
+                              this.GetNode<Position2D>("ProjectileSpawn").LookAt(player.Position);
+                              if (result["collider"] == player)
                               {
                                   animatedSprite.Play("drawback");
                                   IsShooting = true;
@@ -74,7 +74,7 @@ namespace MysticRunescape
 
               if (shootTimer <= 0)
               {
-                  ableToShoot = true;
+                  abletoshoot = true;
               }
               else
               {
@@ -88,8 +88,8 @@ namespace MysticRunescape
             GD.Print("body has entered" + body);
             if (body is Adventurer)
             {
-                Player = body as Adventurer;
-                Active = true;
+                player = body as Adventurer;
+                active = true;
             }
         }
 
@@ -100,7 +100,7 @@ namespace MysticRunescape
             GD.Print("body has exited" + body);
             if (body is Adventurer )
             {
-                Active = false;
+                active = false;
             }
         }
 
@@ -121,10 +121,10 @@ namespace MysticRunescape
         private void ShootAtPlayer()
         {
             GD.Print("shooting");
-            Arrow Arrow = this.Arrow.Instance() as Arrow;
-            Owner.AddChild(Arrow);
-            Arrow.GlobalTransform = this.GetNode<Position2D>("ProjectileSpawn").GlobalTransform;
-            ableToShoot = false;
+            Arrow arrow = this.arrow.Instance() as Arrow;
+            Owner.AddChild(arrow);
+            arrow.GlobalTransform = this.GetNode<Position2D>("ProjectileSpawn").GlobalTransform;
+            abletoshoot = false;
             shootTimer = shootTimerReset;
         }
     }
