@@ -70,8 +70,7 @@ public class Adventurer : KinematicBody2D
 
 			if (IsOnFloor())
 			{
-				if (GetNode<RayCast2D>("RayCastDown").IsColliding() && Input.IsActionPressed("Down") &&
-				    Input.IsActionJustPressed("Jump"))
+				if (GetNode<RayCast2D>("RayCastDown").IsColliding() && Input.IsActionPressed("Down") && Input.IsActionJustPressed("Jump"))
 				{
 					Position = new Vector2(Position.x, Position.y + 2);
 				}
@@ -124,10 +123,19 @@ public class Adventurer : KinematicBody2D
 				ManaTimer -= delta * 1;
 			}
 
+			if (Input.IsActionJustPressed("Attack"))
+			{
+				Attack();
+			}
 			MoveAndSlide(Velocity, Vector2.Up);
 		}
 	}
 
+	private void Attack()
+	{
+		GameManager.MagicController.CastSpell(GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
+	}
+	
 	private void InteractWithItem(Node obj)
 	{
 		if (obj.Owner is Pickupable)

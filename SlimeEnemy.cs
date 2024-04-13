@@ -7,6 +7,7 @@ public class SlimeEnemy : KinematicBody2D
     // private int a = 2;
     // private string b = "text";
     private AnimatedSprite Sprite;
+    private int Health;
     private RayCast2D BottomLeft;
     private RayCast2D BottomRight;
     private RayCast2D MiddleLeft;
@@ -73,6 +74,15 @@ public class SlimeEnemy : KinematicBody2D
                 Adventurer PC = body as Adventurer;
                 PC.TakeDamage();
             }
+        }
+    }
+
+    public void TakeDamage(int DamageAmount)
+    {
+        Health -= DamageAmount;
+        if (Health <= 0)
+        {
+            QueueFree();
         }
     }
 }

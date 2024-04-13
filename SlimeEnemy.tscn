@@ -45,7 +45,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6, 3.5 )
+extents = Vector2( 6, 11 )
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 7.0
@@ -61,7 +61,7 @@ frames = SubResource( 4 )
 animation = "Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 10.5 )
+position = Vector2( 0, 3 )
 shape = SubResource( 3 )
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]

@@ -3,14 +3,17 @@ using System;
 
 public abstract class Spell : Node2D
 {
+    public bool FaceDirection;
     private string ResourcePath;
-    [Export]
+    [Export] 
     public int DamageAmount;
-    [Export]
+    [Export] 
+    public float LifeSpan;
+    [Export] 
     public int Speed;
-    [Export]
+    [Export] 
     public float ManaCost;
     public abstract void CastSpell();
     public abstract void LoadResourcePath();
-    public abstract void SetUp();
+    public abstract void SetUp(bool FaceDirection);
 }
