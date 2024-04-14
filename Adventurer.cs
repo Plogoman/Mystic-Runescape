@@ -1,7 +1,7 @@
 using System;
 using Godot;
 using MysticRunescape;
-
+using System.Collections.Generic;
 public class Adventurer : KinematicBody2D
 {
 	private const float Speed = 60.0f;
@@ -23,6 +23,7 @@ public class Adventurer : KinematicBody2D
 	private AnimatedSprite animatedSprite;
 	public float MaxHealth = 5;
 	public float Health = 5;
+	public int value;
 	private Vector2 FacingDirection = new Vector2(0,0);
 	private bool isTakingDamage = false;
 
@@ -36,6 +37,8 @@ public class Adventurer : KinematicBody2D
 	private float ManaTimerReset = 2f;
 
 	private float ManaTimer = 2f;
+
+	public List<Key> Keys = new List<Key>();
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
@@ -275,5 +278,6 @@ public class Adventurer : KinematicBody2D
 			Mana = 0;
 		}
 	}
+
 	
 }

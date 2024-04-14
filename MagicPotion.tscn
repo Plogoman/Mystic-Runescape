@@ -74,6 +74,7 @@ scale = Vector2( 0.478516, 0.480469 )
 texture = ExtResource( 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+visible = false
 margin_left = -3.0
 margin_top = -15.0
 margin_right = 10.0

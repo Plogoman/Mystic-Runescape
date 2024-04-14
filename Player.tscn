@@ -182,7 +182,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 38, 141 )
+position = Vector2( 40, 141 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -219,5 +219,11 @@ collide_with_areas = true
 
 [node name="RayCastDown" type="RayCast2D" parent="."]
 cast_to = Vector2( 0, 12 )
+
+[node name="KeyFollowLocationLeft" type="Position2D" parent="."]
+position = Vector2( -9, -7 )
+
+[node name="KeyFollowLocationRight" type="Position2D" parent="."]
+position = Vector2( 9, -7 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
