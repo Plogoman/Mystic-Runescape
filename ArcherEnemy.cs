@@ -21,6 +21,8 @@ namespace MysticRunescape
         public bool IsShooting = false;
 
         private AnimatedSprite animatedSprite;
+        
+        private int health;
 
         [Export] 
         public PackedScene arrow;
@@ -127,5 +129,7 @@ namespace MysticRunescape
             abletoshoot = false;
             shootTimer = shootTimerReset;
         }
+        
+        
     }
 }

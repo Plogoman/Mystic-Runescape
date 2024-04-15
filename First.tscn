@@ -944,7 +944,7 @@ position = Vector2( -104, 5 )
 [node name="Spikes" parent="." instance=ExtResource( 6 )]
 
 [node name="RespawnPoint" parent="." instance=ExtResource( 10 )]
-position = Vector2( -86, 0 )
+position = Vector2( -53, 0 )
 
 [node name="ArcherEnemy" type="Node2D" parent="."]
 position = Vector2( 302, 31 )

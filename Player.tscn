@@ -226,4 +226,10 @@ position = Vector2( -9, -7 )
 [node name="KeyFollowLocationRight" type="Position2D" parent="."]
 position = Vector2( 9, -7 )
 
+[node name="SpellCastRight" type="Position2D" parent="."]
+position = Vector2( 10, 0 )
+
+[node name="SpellCastLeft" type="Position2D" parent="."]
+position = Vector2( -10, 0 )
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

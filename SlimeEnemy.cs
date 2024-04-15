@@ -14,6 +14,7 @@ public class SlimeEnemy : KinematicBody2D
     private Vector2 Velocity;
     private const float Gravity = 200.0f;
     private const float Speed = 30.0f;
+    private int health;
     
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -73,6 +74,15 @@ public class SlimeEnemy : KinematicBody2D
                 Adventurer PC = body as Adventurer;
                 PC.TakeDamage();
             }
+        }
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        if(health <= 0)
+        {
+            QueueFree();
         }
     }
 }

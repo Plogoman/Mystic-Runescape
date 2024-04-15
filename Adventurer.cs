@@ -128,8 +128,19 @@ public class Adventurer : KinematicBody2D
 				ManaTimer -= delta * 1;
 			}
 
+			if (Input.IsActionJustPressed("attack"))
+			{
+				attack();
+			}
+
 			MoveAndSlide(Velocity, Vector2.Up);
 		}
+	}
+
+	private void attack()
+	{
+		GameManager.MagicController.CastSpell(GameManager.Player.GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
+		
 	}
 
 	private void InteractWithItem(Node obj)
