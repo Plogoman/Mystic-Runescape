@@ -4,25 +4,40 @@ using MysticRunescape;
 
 public class MagicController : Node
 {
-    public PackedScene EquippedSpell = ResourceLoader.Load("res://Spells/IceKnife.tscn") as PackedScene;
+    private PackedScene EquippedSpell = ResourceLoader.Load("res://miscs/IceKnife.tscn") as PackedScene;
+
+    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         
     }
 
-    public void CastSpell(bool FaceDirection)
+//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+//  public override void _Process(float delta)
+//  {
+//      
+//  }
+
+    public void CastSpell(bool faceDirection)
     {
-        Spell CurrentSpell = EquippedSpell.Instance() as Spell;
-        CurrentSpell.SetUp(FaceDirection);
-        if (FaceDirection)
+        
+        Spell currentSpell = EquippedSpell.Instance() as Spell;
+        currentSpell.SetUp(faceDirection);
+        if (faceDirection)
         {
-            CurrentSpell.GlobalPosition = GameManager.Player.GetNode<Position2D>("SpellCastLeft").GlobalPosition;
+            currentSpell.GlobalPosition = GameManager.Player.GetNode<Position2D>("SpellCastLeft").GlobalPosition;
+
         }
         else
         {
-            CurrentSpell.GlobalPosition = GameManager.Player.GetNode<Position2D>("SpellCastRight").GlobalPosition;
+            currentSpell.GlobalPosition = GameManager.Player.GetNode<Position2D>("SpellCastRight").GlobalPosition;
+
         }
-        GameManager.GlobalGameManager.AddChild(CurrentSpell);
-        GameManager.Player.UpdateMana(-CurrentSpell.ManaCost);
+        GameManager.GlobalGameManager.AddChild(currentSpell);
+        GameManager.Player.UpdateMana(- currentSpell.ManaCost); 
     }
+
+
+
+
 }

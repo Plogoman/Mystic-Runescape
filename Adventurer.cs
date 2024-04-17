@@ -1,6 +1,7 @@
-using System;
 using Godot;
 using MysticRunescape;
+using System;
+using System.Collections.Generic;
 
 public class Adventurer : KinematicBody2D
 {
@@ -26,16 +27,12 @@ public class Adventurer : KinematicBody2D
 	private Vector2 FacingDirection = new Vector2(0,0);
 	private bool isTakingDamage = false;
 
-	[Signal]
-	public delegate void Death();
-
+	[Signal] public delegate void Death();
 	private float Mana = 100f;
-
 	private float MaxMana = 100f;
-
 	private float ManaTimerReset = 2f;
-
 	private float ManaTimer = 2f;
+	public List<Key> Keys = new List<Key>();
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
@@ -70,7 +67,8 @@ public class Adventurer : KinematicBody2D
 
 			if (IsOnFloor())
 			{
-				if (GetNode<RayCast2D>("RayCastDown").IsColliding() && Input.IsActionPressed("Down") && Input.IsActionJustPressed("Jump"))
+				if (GetNode<RayCast2D>("RayCastDown").IsColliding() && Input.IsActionPressed("Down") &&
+				    Input.IsActionJustPressed("Jump"))
 				{
 					Position = new Vector2(Position.x, Position.y + 2);
 				}
@@ -123,19 +121,10 @@ public class Adventurer : KinematicBody2D
 				ManaTimer -= delta * 1;
 			}
 
-			if (Input.IsActionJustPressed("Attack"))
-			{
-				Attack();
-			}
 			MoveAndSlide(Velocity, Vector2.Up);
 		}
 	}
 
-	private void Attack()
-	{
-		GameManager.MagicController.CastSpell(GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
-	}
-	
 	private void InteractWithItem(Node obj)
 	{
 		if (obj.Owner is Pickupable)

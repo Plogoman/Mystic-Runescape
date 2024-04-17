@@ -12,18 +12,9 @@ namespace MysticRunescape
 		// Called when the node enters the scene tree for the first time.
 		public static GameManager GlobalGameManager;
 		public static Adventurer Player;
-		public static MagicController MagicController;
 		public override void _Ready()
 		{
-			if (GlobalGameManager == null)
-			{
-				GlobalGameManager = this;
-			}
-			else
-			{
-				QueueFree();
-			}
-			MagicController = new MagicController();
+		
 		}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

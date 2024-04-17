@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Mystic-Runescape\\Mystic- Runescape.csproj": {}
+    "D:\\Mystic-Runescape - Copy\\Mystic- Runescape.csproj": {}
   },
   "projects": {
-    "D:\\Mystic-Runescape\\Mystic- Runescape.csproj": {
+    "D:\\Mystic-Runescape - Copy\\Mystic- Runescape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Mystic-Runescape\\Mystic- Runescape.csproj",
+        "projectUniqueName": "D:\\Mystic-Runescape - Copy\\Mystic- Runescape.csproj",
         "projectName": "Mystic- Runescape",
-        "projectPath": "D:\\Mystic-Runescape\\Mystic- Runescape.csproj",
+        "projectPath": "D:\\Mystic-Runescape - Copy\\Mystic- Runescape.csproj",
         "packagesPath": "C:\\Users\\w.i\\.nuget\\packages\\",
-        "outputPath": "D:\\Mystic-Runescape\\.mono\\temp\\obj\\",
+        "outputPath": "D:\\Mystic-Runescape - Copy\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

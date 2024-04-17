@@ -1,65 +1,102 @@
 using Godot;
 using System;
+using MysticRunescape;
 
 public class IceKnife : Spell
 {
-    private AnimationPlayer Player;
-    [Export] 
-    public bool AbleToMove;
+    private AnimationPlayer player;
+    [Export]
+    public bool ableToMove;
+
     public override void _Ready()
     {
-        Player = GetNode<AnimationPlayer>("AnimationPlayer");
-        Player.Play("Cast");
+        player = GetNode<AnimationPlayer>("AnimationPlayer");
+        player.Play("cast");
     }
 
     public override void _PhysicsProcess(float delta)
     {
-        if (AbleToMove)
+        if (ableToMove)
         {
-            if (!Player.IsPlaying())
+            if (!player.IsPlaying())
             {
-                Player.Play("Idle");
+                player.Play("idle");
             }
-            if (FaceDirection)
+
+
+            if (faceDirection)
             {
                 Position -= (Transform.x * delta * Speed);
             }
             else
-            { 
+            {
                 Position += (Transform.x * delta * Speed);
             }
+
             LifeSpan -= delta;
             if (LifeSpan < 0)
-            { 
+            {
                 QueueFree();
-            }   
+            }
         }
     }
-    
-    public override void SetUp(bool faceDirection)
+
+    public override void SetUp(bool facedirection)
     {
-        GetNode<Sprite>("Sprite").FlipH = faceDirection;
-        FaceDirection = faceDirection;
+        GetNode<Sprite>("Sprite").FlipH = facedirection;
+        faceDirection = facedirection;
     }
 
     public override void CastSpell()
     {
-        //throw new NotImplementedException();
+        
     }
-
+    
     public override void LoadResourcePath()
     {
-        //throw new NotImplementedException();
+        
     }
 
     public void _on_Area2D_body_entered(object body)
     {
-        Player.Play("Finish");
         if (body is SlimeEnemy)
         {
-            SlimeEnemy Slime = body as SlimeEnemy;
-            Slime.TakeDamage(DamageAmount);
+            SlimeEnemy slime = body as SlimeEnemy;
+            slime.TakeDamage(DamageAmount);
+            player.Play("finish");
         }
-        QueueFree();
+        if (!faceDirection)
+        {
+            player.Play("finish");
+        }
+        else
+        {
+            if (body is TileMap)
+            {
+                player.Play("finish");
+            }
+            else if (body is Door)
+            {
+                player.Play("finish");
+            }
+            else if (body is Door2)
+            {
+                player.Play("finish");
+            }
+            else if (body is Platform1)
+            {
+                player.Play("finish");
+            }
+            else
+            {
+                if (LifeSpan < 0)
+                {
+                    player.Play("finish");
+                }
+            }
+        }
     }
+
+    
+    
 }
