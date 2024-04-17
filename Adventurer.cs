@@ -33,6 +33,7 @@ public class Adventurer : KinematicBody2D
 	private float ManaTimerReset = 2f;
 	private float ManaTimer = 2f;
 	public List<Key> Keys = new List<Key>();
+	public List<Key2> Keys2 = new List<Key2>();
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
