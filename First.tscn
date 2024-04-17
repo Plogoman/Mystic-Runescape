@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles_flipped.png" type="Texture" id=1]
 [ext_resource path="res://cavesofgallet/cavesofgallet_tiles.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://SlimeEnemy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://MagicPotion.tscn" type="PackedScene" id=14]
 [ext_resource path="res://InterfaceManager.cs" type="Script" id=15]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Door2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Key2.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=84]
 points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
@@ -1059,6 +1063,18 @@ margin_left = -252.0
 margin_top = 37.0
 margin_right = -3.0
 margin_bottom = 51.0
+
+[node name="Door2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 69, -24 )
+
+[node name="Door" parent="." instance=ExtResource( 16 )]
+position = Vector2( 95, -8 )
+
+[node name="Key" parent="." instance=ExtResource( 18 )]
+position = Vector2( 15, -30 )
+
+[node name="Key2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 31, -30 )
 
 [connection signal="Death" from="Player" to="." method="_on_Player_Death"]
 [connection signal="animation_finished" from="ArcherEnemy/AnimatedSprite" to="ArcherEnemy" method="_on_AnimatedSprite_animation_finished"]
