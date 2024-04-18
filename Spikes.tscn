@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Spikes.cs" type="Script" id=1]
+[ext_resource path="res://Legacy-Dungeon/tile143.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=145]
+extents = Vector2( 5, 4 )
+
+[node name="Spikes" type="Node2D"]
+position = Vector2( 165, 135 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1, 4 )
+shape = SubResource( 145 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
