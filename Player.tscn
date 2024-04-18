@@ -182,7 +182,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 38, 141 )
+position = Vector2( 40, 141 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -203,14 +203,14 @@ animation = "Idle"
 current = true
 zoom = Vector2( 0.3, 0.3 )
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
+[node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2( 5, 0 )
 rotation = 1.5708
 enabled = true
 cast_to = Vector2( 7.62939e-05, 20 )
 collide_with_areas = true
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
+[node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2( -7, 0 )
 rotation = -1.5708
 enabled = true
@@ -218,13 +218,18 @@ cast_to = Vector2( -7.62939e-05, 20 )
 collide_with_areas = true
 
 [node name="RayCastDown" type="RayCast2D" parent="."]
-enabled = true
 cast_to = Vector2( 0, 12 )
 
-[node name="SpellCastLeft" type="Position2D" parent="."]
-position = Vector2( -12, 0 )
+[node name="KeyFollowLocationLeft" type="Position2D" parent="."]
+position = Vector2( -9, -7 )
+
+[node name="KeyFollowLocationRight" type="Position2D" parent="."]
+position = Vector2( 9, -7 )
 
 [node name="SpellCastRight" type="Position2D" parent="."]
-position = Vector2( 12, 0 )
+position = Vector2( 10, 0 )
+
+[node name="SpellCastLeft" type="Position2D" parent="."]
+position = Vector2( -10, 0 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

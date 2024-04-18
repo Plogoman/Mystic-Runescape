@@ -5,8 +5,9 @@ public abstract class Spell : Node2D
 {
 
     public bool faceDirection;
+    [Export]
     
-    private string ResourcePath;
+    public string ResourcePath;
     [Export] 
     
     public float LifeSpan;

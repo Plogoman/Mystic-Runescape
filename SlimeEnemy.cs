@@ -7,7 +7,6 @@ public class SlimeEnemy : KinematicBody2D
     // private int a = 2;
     // private string b = "text";
     private AnimatedSprite Sprite;
-    private int Health;
     private RayCast2D BottomLeft;
     private RayCast2D BottomRight;
     private RayCast2D MiddleLeft;
@@ -15,6 +14,7 @@ public class SlimeEnemy : KinematicBody2D
     private Vector2 Velocity;
     private const float Gravity = 200.0f;
     private const float Speed = 30.0f;
+    private int health;
     
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -77,10 +77,10 @@ public class SlimeEnemy : KinematicBody2D
         }
     }
 
-    public void TakeDamage(int DamageAmount)
+    public void TakeDamage(int damageAmount)
     {
-        Health -= DamageAmount;
-        if (Health <= 0)
+        health -= damageAmount;
+        if(health <= 0)
         {
             QueueFree();
         }

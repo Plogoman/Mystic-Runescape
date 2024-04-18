@@ -1,8 +1,7 @@
+using System;
 using Godot;
 using MysticRunescape;
-using System;
 using System.Collections.Generic;
-
 public class Adventurer : KinematicBody2D
 {
 	private const float Speed = 60.0f;
@@ -24,14 +23,21 @@ public class Adventurer : KinematicBody2D
 	private AnimatedSprite animatedSprite;
 	public float MaxHealth = 5;
 	public float Health = 5;
+	public int value;
 	private Vector2 FacingDirection = new Vector2(0,0);
 	private bool isTakingDamage = false;
 
-	[Signal] public delegate void Death();
+	[Signal]
+	public delegate void Death();
+
 	private float Mana = 100f;
+
 	private float MaxMana = 100f;
+
 	private float ManaTimerReset = 2f;
+
 	private float ManaTimer = 2f;
+
 	public List<Key> Keys = new List<Key>();
 	public List<Key2> Keys2 = new List<Key2>();
 	public override void _Ready()
@@ -122,7 +128,25 @@ public class Adventurer : KinematicBody2D
 				ManaTimer -= delta * 1;
 			}
 
+			if (Input.IsActionJustPressed("attack"))
+			{
+				attack();
+			}
+
+			if (Input.IsActionPressed("switch_spell"))
+			{
+				GameManager.MagicController.CycleSpell();
+			}
+
 			MoveAndSlide(Velocity, Vector2.Up);
+		}
+	}
+
+	private void attack()
+	{
+		if (Mana >= 10)
+		{
+			GameManager.MagicController.CastSpell(GameManager.Player.GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
 		}
 	}
 
@@ -273,5 +297,6 @@ public class Adventurer : KinematicBody2D
 			Mana = 0;
 		}
 	}
+
 	
 }
