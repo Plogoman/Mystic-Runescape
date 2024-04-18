@@ -2,11 +2,14 @@ using Godot;
 using System;
 using MysticRunescape;
 
+
+
 public class IceKnife : Spell
 {
+    public string ResourcePath = "res://miscs/IceKnife.tscn";
+    
     private AnimationPlayer player;
-    [Export]
-    public bool ableToMove;
+    [Export] public bool ableToMove;
 
     public override void _Ready()
     {
