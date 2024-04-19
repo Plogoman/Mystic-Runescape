@@ -944,9 +944,7 @@ position = Vector2( -104, 5 )
 [node name="Spikes" parent="." instance=ExtResource( 6 )]
 
 [node name="RespawnPoint" parent="." instance=ExtResource( 10 )]
-physics_interpolation_mode = 1
-position = Vector2( -45, -10 )
-z_as_relative = false
+position = Vector2( 124, -57 )
 
 [node name="ArcherEnemy" type="Node2D" parent="."]
 position = Vector2( 302, 31 )
