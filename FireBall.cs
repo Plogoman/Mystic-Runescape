@@ -2,23 +2,24 @@ using Godot;
 using System;
 using MysticRunescape;
 
-public class IceKnife : Spell
+public class FireBall : Spell
 {
-    public string ResourcePath = "res://miscs/IceKnife.tscn";
+    public string ResourcePath = "res://miscs/FireBall.tscn";
     
     private AnimationPlayer player;
     [Export]
     public bool ableToMove;
 
-    public IceKnife()
+    public FireBall()
     {
-        InterfaceTexturePath = "res://miscs/IceKnife/I5050-7.png";
+        InterfaceTexturePath = "res://miscs/FireSpell/FB500-1.png";
         InterfaceTexture = ResourceLoader.Load(InterfaceTexturePath) as Texture;
     }
+    
     public override void _Ready()
     {
-        player = GetNode<AnimationPlayer>("AnimationPlayer");
-        player.Play("cast");
+            player = GetNode<AnimationPlayer>("AnimationPlayer");
+            player.Play("cast");
     }
 
     public override void _PhysicsProcess(float delta)

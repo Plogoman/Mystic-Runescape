@@ -1,15 +1,29 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using MysticRunescape;
 
 public class MagicController : Node
 {
-    private PackedScene EquippedSpell = ResourceLoader.Load("res://miscs/IceKnife.tscn") as PackedScene;
+    public Spell EquippedSpell;
 
+    public List<Spell> AvSpells = new List<Spell>();
+
+    private int currentCount;
     // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public MagicController()
     {
-        
+        IceKnife iceKnife = new IceKnife();
+        iceKnife.SpellScene = (ResourceLoader.Load(iceKnife.ResourcePath) as PackedScene);
+        AvSpells.Add(iceKnife);
+        HealingSpell healingSpell = new HealingSpell();
+        healingSpell.SpellScene = (ResourceLoader.Load(healingSpell.ResourcePath) as PackedScene);
+        AvSpells.Add(healingSpell);
+        FireBall fireBall = new FireBall();
+        fireBall.SpellScene = (ResourceLoader.Load(fireBall.ResourcePath) as PackedScene);
+        AvSpells.Add(fireBall);
+        EquippedSpell = AvSpells[2];
+        InterfaceManager.SetSpellSprite(EquippedSpell.InterfaceTexture);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +35,7 @@ public class MagicController : Node
     public void CastSpell(bool faceDirection)
     {
         
-        Spell currentSpell = EquippedSpell.Instance() as Spell;
+        Spell currentSpell = EquippedSpell.SpellScene.Instance() as Spell;
         currentSpell.SetUp(faceDirection);
         if (faceDirection)
         {
@@ -37,6 +51,18 @@ public class MagicController : Node
         GameManager.Player.UpdateMana(- currentSpell.ManaCost); 
     }
 
+    public void CycleSpell()
+    {
+        currentCount += 1;
+        if (AvSpells.Count -1 < currentCount)
+        {
+            currentCount = 0;
+        }
+        EquippedSpell = AvSpells[currentCount];
+        
+        InterfaceManager.SetSpellSprite(EquippedSpell.InterfaceTexture);
+        
+    }
 
 
 

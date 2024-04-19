@@ -33,13 +33,13 @@ namespace MysticRunescape
 //  }
 		public void RespawnPlayer()
 		{
-		Adventurer pc = GetNode<Adventurer>("Player");
-		pc.GlobalPosition = RespawnPoint.GlobalPosition;
-		if (pc.GlobalPosition != RespawnPoint.GlobalPosition)
+		Adventurer ad = GetNode<Adventurer>("Player");
+		ad.GlobalPosition = RespawnPoint.GlobalPosition;
+		if (ad.GlobalPosition != RespawnPoint.GlobalPosition)
 		{
-			pc.GlobalPosition = RespawnPoint.GlobalPosition;
+			ad.GlobalPosition = RespawnPoint.GlobalPosition;
 		}
-		pc.RespawnPlayer();
+		ad.RespawnPlayer();
 		}
 
 		private void _on_Player_Death()

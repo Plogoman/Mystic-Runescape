@@ -944,7 +944,9 @@ position = Vector2( -104, 5 )
 [node name="Spikes" parent="." instance=ExtResource( 6 )]
 
 [node name="RespawnPoint" parent="." instance=ExtResource( 10 )]
-position = Vector2( 0, -15 )
+physics_interpolation_mode = 1
+position = Vector2( -45, -10 )
+z_as_relative = false
 
 [node name="ArcherEnemy" type="Node2D" parent="."]
 position = Vector2( 302, 31 )
@@ -1034,7 +1036,7 @@ __meta__ = {
 }
 
 [node name="MagicPotion" parent="." instance=ExtResource( 14 )]
-position = Vector2( 0, 6 )
+position = Vector2( 0, 5 )
 
 [node name="InterfaceManager" type="CanvasLayer" parent="."]
 script = ExtResource( 15 )
@@ -1042,9 +1044,9 @@ script = ExtResource( 15 )
 [node name="MainInterface" type="Control" parent="InterfaceManager"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.0
-margin_right = -4.0
-margin_bottom = -8.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -6.0
 
 [node name="HealthBar" type="ProgressBar" parent="InterfaceManager/MainInterface"]
 anchor_left = 1.0
@@ -1061,6 +1063,20 @@ margin_left = -252.0
 margin_top = 37.0
 margin_right = -3.0
 margin_bottom = 51.0
+
+[node name="MagicSpellPanel" type="Panel" parent="InterfaceManager/MainInterface"]
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 87.0
+margin_bottom = 76.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MagicSpellTexture" type="TextureRect" parent="InterfaceManager/MainInterface/MagicSpellPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
 
 [node name="Key" parent="." instance=ExtResource( 16 )]
 position = Vector2( -76, -3 )

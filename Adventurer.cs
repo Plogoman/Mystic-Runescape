@@ -37,6 +37,11 @@ public class Adventurer : KinematicBody2D
 	private float ManaTimerReset = 2f;
 
 	private float ManaTimer = 2f;
+	
+	public float switchSpellCooldown = 0.5f;
+	public float switchSpellTimer = 0f;
+	public float switchSpellCooldown2 = 0.5f;
+	public float switchSpellTimer2 = 0f;
 
 	public List<Key> Keys = new List<Key>();
 	public List<Key2> Keys2 = new List<Key2>();
@@ -113,10 +118,12 @@ public class Adventurer : KinematicBody2D
 					Velocity = new Vector2(0, 0);
 				}
 			}
-			else
+			
+			if(isInAir || !isDashing || !IsOnFloor())
 			{
 				Velocity.y += Gravity * delta;
 			}
+			
 
 			if (Mana < 100 && ManaTimer <= 0)
 			{
@@ -130,7 +137,22 @@ public class Adventurer : KinematicBody2D
 
 			if (Input.IsActionJustPressed("attack"))
 			{
-				attack();
+				if (Mana >= 10)
+				{
+					attack();
+				}
+			}
+
+			if (switchSpellTimer > 0)
+			{
+				switchSpellTimer -= delta;
+			}
+			
+			if (Input.IsActionPressed("switch_spell") && switchSpellTimer <= 0)
+			{
+				GameManager.MagicController.CycleSpell();
+				
+				switchSpellTimer = switchSpellCooldown;
 			}
 
 			MoveAndSlide(Velocity, Vector2.Up);
@@ -140,7 +162,6 @@ public class Adventurer : KinematicBody2D
 	private void attack()
 	{
 		GameManager.MagicController.CastSpell(GameManager.Player.GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
-		
 	}
 
 	private void InteractWithItem(Node obj)
