@@ -6,7 +6,6 @@ using MysticRunescape;
 public class MagicController : Node
 {
     public PackedScene EquippedSpell;
-
     public List<PackedScene> AvSpells = new List<PackedScene>();
 
     private int currentCount;
@@ -26,12 +25,10 @@ public class MagicController : Node
         if (faceDirection)
         {
             currentSpell.GlobalPosition = GameManager.Player.GetNode<Position2D>("SpellCastLeft").GlobalPosition;
-
         }
         else
         {
             currentSpell.GlobalPosition = GameManager.Player.GetNode<Position2D>("SpellCastRight").GlobalPosition;
-
         }
         GameManager.GlobalGameManager.AddChild(currentSpell);
         GameManager.Player.UpdateMana(- currentSpell.ManaCost); 

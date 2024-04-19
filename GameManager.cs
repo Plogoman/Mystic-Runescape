@@ -12,6 +12,7 @@ namespace MysticRunescape
 		public static GameManager GlobalGameManager;
 		public static Adventurer Player;
 		public static MagicController MagicController;
+		
 		public override void _Ready()
 		{
 			if (GlobalGameManager == null)
@@ -23,28 +24,21 @@ namespace MysticRunescape
 				QueueFree();
 			}
 			MagicController = new MagicController();
+			RespawnPoint = GetNode<Position2D>("RespawnPoint");
 		}
-
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+		
 		public void RespawnPlayer()
 		{
-		Adventurer pc = GetNode<Adventurer>("Player");
-		pc.GlobalPosition = RespawnPoint.GlobalPosition;
-		if (pc.GlobalPosition != RespawnPoint.GlobalPosition)
-		{
-			pc.GlobalPosition = RespawnPoint.GlobalPosition;
-		}
-		pc.RespawnPlayer();
+			Player.Position = RespawnPoint.Position;
+			Player.Show();
+			Player.Health = 5; 
+			InterfaceManager.UpdateHealth(Player.MaxHealth, Player.Health);
+			InterfaceManager.UpdateMana(Player.MaxHealth, Player.Mana);
 		}
 
 		private void _on_Player_Death()
 		{
 			RespawnPlayer();
 		}
-		
 	}
 }

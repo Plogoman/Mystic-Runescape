@@ -151,7 +151,7 @@ region = Rect2( 50, 185, 50, 37 )
 [sub_resource type="SpriteFrames" id=83]
 animations = [ {
 "frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
-"loop": true,
+"loop": false,
 "name": "Death",
 "speed": 5.0
 }, {
@@ -176,13 +176,12 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ) ],
-"loop": true,
+"loop": false,
 "name": "TakeDamage",
 "speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 40, 141 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true

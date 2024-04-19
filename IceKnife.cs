@@ -2,8 +2,6 @@ using Godot;
 using System;
 using MysticRunescape;
 
-
-
 public class IceKnife : Spell
 {
     public string ResourcePath = "res://miscs/IceKnife.tscn";

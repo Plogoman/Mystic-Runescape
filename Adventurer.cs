@@ -27,16 +27,12 @@ public class Adventurer : KinematicBody2D
 	private Vector2 FacingDirection = new Vector2(0,0);
 	private bool isTakingDamage = false;
 
-	[Signal]
-	public delegate void Death();
+	[Signal] public delegate void Death();
 
-	private float Mana = 100f;
-
-	private float MaxMana = 100f;
-
-	private float ManaTimerReset = 2f;
-
-	private float ManaTimer = 2f;
+	public float Mana = 100f;
+	public float MaxMana = 100f;
+	public float ManaTimerReset = 2f;
+	public float ManaTimer = 2f;
 
 	public List<Key> Keys = new List<Key>();
 	public List<Key2> Keys2 = new List<Key2>();
@@ -48,8 +44,8 @@ public class Adventurer : KinematicBody2D
 
 	public override void _PhysicsProcess(float delta)
 	{
-		InterfaceManager.UpdateHealth(MaxHealth,Health);
-		InterfaceManager.UpdateMana(MaxMana,Mana);
+		InterfaceManager.UpdateHealth(MaxHealth, Health);
+		InterfaceManager.UpdateMana(MaxMana, Mana);
 		if (Health > 0)
 		{
 			if (!isDashing)
@@ -130,7 +126,7 @@ public class Adventurer : KinematicBody2D
 
 			if (Input.IsActionJustPressed("attack"))
 			{
-				attack();
+				Attack();
 			}
 
 			if (Input.IsActionPressed("switch_spell"))
@@ -142,7 +138,7 @@ public class Adventurer : KinematicBody2D
 		}
 	}
 
-	private void attack()
+	private void Attack()
 	{
 		if (Mana >= 10)
 		{
@@ -277,14 +273,6 @@ public class Adventurer : KinematicBody2D
 		}
 	}
 
-	public void RespawnPlayer()
-	{
-		Show();
-		Health = 5; 
-		InterfaceManager.UpdateHealth(MaxHealth,Health);
-		InterfaceManager.UpdateMana(MaxMana,Mana);
-	}
-
 	public void UpdateMana(float ManaAmount)
 	{
 		Mana += ManaAmount;
@@ -297,6 +285,4 @@ public class Adventurer : KinematicBody2D
 			Mana = 0;
 		}
 	}
-
-	
 }
