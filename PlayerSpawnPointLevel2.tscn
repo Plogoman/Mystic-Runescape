@@ -1,0 +1,3 @@
+[gd_scene format=2]
+
+[node name="PlayerSpawnPointLevel2" type="Position2D"]

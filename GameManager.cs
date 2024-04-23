@@ -1,78 +1,73 @@
+// GameManager.cs
 using Godot;
+using System;
 
-namespace MysticRunescape
+public class GameManager : Node2D
 {
-	public class GameManager : Node2D
-	{
-		// Declare member variables here. Examples:
-		// private int a = 2;
-		// private string b = "text";
-		[Export] public Position2D RespawnPoint;
-		// Called when the node enters the scene tree for the first time.
-		public static GameManager GlobalGameManager;
-		public static Adventurer Player;
-		public static MagicController MagicController;
-		public LevelTransition CurrentLevelTransition;
-		public PackedScene CurrentLevel;
-		
-		public override void _Ready()
-		{
-			if (GlobalGameManager == null)
-			{
-				GlobalGameManager = this;
-			}
-			else
-			{
-				QueueFree();
-			}
-			MagicController = new MagicController();
-			LoadInitialLevel();
-			
-			CurrentLevelTransition = GetNode<LevelTransition>("LevelTransition");
-			CurrentLevelTransition.levelTransition += TransitionToNextLevel;
-			RespawnPoint = GetNode<Position2D>("PlayerSpawnPoint");
-		}
+    public static GameManager GlobalGameManager;
+    public static Adventurer Player;
+    public static MagicController MagicController;
+    private Area2D currentLevelTransition;
+    private PackedScene currentLevel;
 
-		public void LoadInitialLevel()
-		{
-			CurrentLevel = ResourceLoader.Load<PackedScene>("res://Levels/Level1.tscn");
-			LoadLevel(CurrentLevel);
-		}
+    public override void _Ready()
+    {
+        if (GlobalGameManager == null)
+        {
+            GlobalGameManager = this;
+        }
+        else
+        {
+            QueueFree();
+        }
 
-		public void LoadLevel(PackedScene Level)
-		{
-			if (GetTree().CurrentScene is Node2D currentScene)
-			{
-				currentScene.QueueFree();
-			}
+        MagicController = new MagicController();
+        LoadInitialLevel();
+    }
 
-			var NewLevelInstance = (Node2D)Level.Instance();
-			GetTree().Root.AddChild(NewLevelInstance);
-			GetTree().CurrentScene = NewLevelInstance;
+    private void LoadInitialLevel()
+    {
+        // Load the first level scene
+        currentLevel = ResourceLoader.Load<PackedScene>("res://Levels/Level1.tscn");
+        LoadLevel(currentLevel);
+    }
 
-			CurrentLevelTransition = NewLevelInstance.GetNode<LevelTransition>("LevelTransition");
-			CurrentLevelTransition.Connect("level_transition", this, nameof(TransitionToNextLevel));
-		}
-		
-		public void RespawnPlayer()
-		{
-			Player.Position = CurrentLevelTransition.RespawnPoint.GlobalPosition;
-			Player.Show();
-			Player.animatedSprite.Play("Idle");
-			Player.Health = Player.MaxHealth;
-			InterfaceManager.UpdateHealth(Player.MaxHealth, Player.Health);
-			InterfaceManager.UpdateMana(Player.MaxHealth, Player.Mana);
-		}
+    public void LoadLevel(PackedScene level)
+    {
+        // Unload the current level, if any
+        if (GetTree().CurrentScene is Node2D currentScene)
+        {
+            currentScene.QueueFree();
+        }
 
-		private void _on_Player_Death()
-		{
-			RespawnPlayer();
-		}
+        // Load the new level
+        var newLevelInstance = (Node2D)level.Instance();
+        GetTree().Root.CallDeferred("add_child", newLevelInstance);
+        GetTree().CurrentScene = newLevelInstance;
 
-		public void TransitionToNextLevel(PackedScene NextLevel)
-		{
-			CurrentLevel = NextLevel;
-			LoadLevel(CurrentLevel);
-		}
-	}
+        // Get a reference to the LevelTransition node
+        currentLevelTransition = newLevelInstance.GetNode<Area2D>("LevelTransition");
+        currentLevelTransition.Connect("LevelTransition", this, nameof(TransitionToNextLevel));
+    }
+
+    private void TransitionToNextLevel(PackedScene nextLevel)
+    {
+        currentLevel = nextLevel;
+        LoadLevel(currentLevel);
+    }
+
+    public void RespawnPlayer()
+    {
+        Player.Position = currentLevelTransition.GetNode<Position2D>("RespawnPoint").GlobalPosition;
+        Player.Show();
+        Player.animatedSprite.Play("Idle");
+        Player.Health = Player.MaxHealth;
+        InterfaceManager.UpdateHealth(Player.MaxHealth, Player.Health);
+        InterfaceManager.UpdateMana(Player.MaxMana, Player.Mana);
+    }
+
+    private void _on_Player_Death()
+    {
+        RespawnPlayer();
+    }
 }
