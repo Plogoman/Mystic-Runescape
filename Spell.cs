@@ -5,16 +5,13 @@ public abstract class Spell : Node2D
 {
 
     public bool faceDirection;
-    [Export]
-    
-    public string ResourcePath;
     [Export] 
     
     public float LifeSpan;
     
     [Export]
     
-    public int DamageAmount;
+    public float DamageAmount;
 
     [Export]
     
@@ -24,13 +21,19 @@ public abstract class Spell : Node2D
     
     public float ManaCost;
 
+    public PackedScene SpellScene;
+    
+    public string InterfaceTexturePath;
+
+    public Texture InterfaceTexture;
+
     public abstract void CastSpell();
 
     public abstract void LoadResourcePath();
 
     public abstract void SetUp(bool faceDirection);
 
-
+    
 
 
 
