@@ -20,6 +20,7 @@ public class FireBall : Spell
     {
             player = GetNode<AnimationPlayer>("AnimationPlayer");
             player.Play("cast");
+            GetNode<AudioStreamPlayer>("fireball").Play();
     }
 
     public override void _PhysicsProcess(float delta)

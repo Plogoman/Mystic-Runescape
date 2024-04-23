@@ -420,11 +420,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\OOP PROJECT\\Mystic-Runescape\\Mystic- Runescape.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\new oop project\\Mystic-Runescape\\Mystic- Runescape.csproj",
       "projectName": "Mystic- Runescape",
-      "projectPath": "C:\\Users\\PC\\Desktop\\OOP PROJECT\\Mystic-Runescape\\Mystic- Runescape.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\new oop project\\Mystic-Runescape\\Mystic- Runescape.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\OOP PROJECT\\Mystic-Runescape\\.mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\new oop project\\Mystic-Runescape\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -15,11 +15,9 @@ namespace MysticRunescape
 		
 		public override void _Ready()
 		{
-			if (GlobalGameManager == null)
-			{
-				GlobalGameManager = this;
-			}
-			else
+			GlobalGameManager = this; 
+			
+			if(GlobalGameManager == null)
 			{
 				QueueFree();
 			}

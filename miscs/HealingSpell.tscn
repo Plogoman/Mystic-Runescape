@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://miscs/IceKnife/I5050-7.png" type="Texture" id=1]
 [ext_resource path="res://miscs/HealingSpell.cs" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://miscs/HealingSpell/2.png" type="Texture" id=4]
 [ext_resource path="res://miscs/HealingSpell/3.png" type="Texture" id=5]
 [ext_resource path="res://miscs/HealingSpell/4.png" type="Texture" id=6]
+[ext_resource path="res://sounds/Heal Sound Effect.mp3" type="AudioStream" id=7]
 [ext_resource path="res://miscs/IceKnife/I5050-10.png" type="Texture" id=8]
 [ext_resource path="res://miscs/IceKnife/I5050-11.png" type="Texture" id=9]
 [ext_resource path="res://miscs/IceKnife/I5050-8.png" type="Texture" id=10]
@@ -127,6 +128,9 @@ anims/RESET = SubResource( 2 )
 anims/cast = SubResource( 3 )
 anims/finish = SubResource( 4 )
 anims/idle = SubResource( 5 )
+
+[node name="heal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

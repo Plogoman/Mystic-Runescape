@@ -19,6 +19,7 @@ public class IceKnife : Spell
     {
         player = GetNode<AnimationPlayer>("AnimationPlayer");
         player.Play("cast");
+        GetNode<AudioStreamPlayer>("iceshard").Play();
     }
 
     public override void _PhysicsProcess(float delta)

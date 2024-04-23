@@ -40,12 +40,16 @@ public class Adventurer : KinematicBody2D
 	
 	public float switchSpellCooldown = 0.5f;
 	public float switchSpellTimer = 0f;
+
+	
+	
 	
 
 	public List<Key> Keys = new List<Key>();
 	public List<Key2> Keys2 = new List<Key2>();
 	public override void _Ready()
 	{
+		GetNode<AudioStreamPlayer>("background").Play();
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
 		GameManager.Player = this;
 	}
@@ -82,12 +86,14 @@ public class Adventurer : KinematicBody2D
 				    Input.IsActionJustPressed("Jump"))
 				{
 					Position = new Vector2(Position.x, Position.y + 2);
+					GetNode<AudioStreamPlayer>("jump").Play();
 				}
 				else if (Input.IsActionJustPressed("Jump"))
 				{
 					Velocity.y = -JumpVelocity;
 					animatedSprite.Play("Jump");
 					isInAir = true;
+					GetNode<AudioStreamPlayer>("jump").Play();
 				}
 				else
 				{
@@ -184,14 +190,15 @@ public class Adventurer : KinematicBody2D
 			{
 				FacingDirection.x -= 1;
 				animatedSprite.FlipH = true;
+				GetNode<AudioStreamPlayer>("run").Play();
 			}
 
 			if (Input.IsActionPressed("Right"))
 			{
 				FacingDirection.x += 1;
 				animatedSprite.FlipH = false;
+				GetNode<AudioStreamPlayer>("run").Play();
 			}
-			
 			if (Input.IsActionPressed("Up"))
 			{
 				FacingDirection.y = -1;
