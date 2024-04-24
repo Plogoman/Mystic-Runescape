@@ -31,8 +31,9 @@ namespace MysticRunescape
 			Player.Show();
 			Player.animatedSprite.Play("Idle");
 			Player.Health = 5;
+			Player.Mana = 100;
+			InterfaceManager.UpdateMana(Player.MaxMana, Player.Mana);
 			InterfaceManager.UpdateHealth(Player.MaxHealth, Player.Health);
-			InterfaceManager.UpdateMana(Player.MaxHealth, Player.Mana);
 		}
 
 		private void _on_Area2D_body_entered(object body)
