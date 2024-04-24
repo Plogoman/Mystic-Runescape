@@ -9,7 +9,7 @@ public class MagicPotion :Pickupable
     // private string b = "text";
     
     
-    public float MagicGainAmount = 20f;
+    public float MagicGainAmount = 2f;
     
     
     
@@ -44,7 +44,7 @@ public class MagicPotion :Pickupable
 
     public void UsePotion()
     {
-        GameManager.Player.UpdateMana(MagicGainAmount);
+        GameManager.Player.UpdateHealth(MagicGainAmount);
         QueueFree();
     }
 

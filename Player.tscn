@@ -4,9 +4,9 @@
 [ext_resource path="res://Adventurer/adventurer-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Adventurer-Hand-Combat/adventurer-hand-combat-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Adventurer.cs" type="Script" id=4]
+[ext_resource path="res://sounds/CELESTE Chill Music Compilation tenpers.mp3" type="AudioStream" id=5]
 [ext_resource path="res://sounds/Footsteps Grass Sound Effect (HD).mp3" type="AudioStream" id=6]
 [ext_resource path="res://sounds/Jump sound effect.mp3" type="AudioStream" id=7]
-[ext_resource path="res://sounds/CELESTE  Chill Music Compilation  #tenpers.mp3" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 8.5 )
@@ -204,7 +204,7 @@ animation = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.19, 0.19 )
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2( 5, 0 )
@@ -240,7 +240,7 @@ stream = ExtResource( 7 )
 volume_db = 5.429
 
 [node name="background" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 5 )
 
 [node name="run" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )

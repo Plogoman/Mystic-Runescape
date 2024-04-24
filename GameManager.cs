@@ -12,7 +12,7 @@ namespace MysticRunescape
 		public static GameManager GlobalGameManager;
 		public static Adventurer Player;
 		public static MagicController MagicController;
-		
+		public float Gravity = 40f;
 		public override void _Ready()
 		{
 			GlobalGameManager = this; 
@@ -35,6 +35,17 @@ namespace MysticRunescape
 			InterfaceManager.UpdateMana(Player.MaxHealth, Player.Mana);
 		}
 
+		private void _on_Area2D_body_entered(object body)
+		{
+			if (body is Adventurer)
+			{
+				RespawnPlayer();
+			}
+		}
+
+		
+		
+		
 		private void _on_Player_Death()
 		{
 			RespawnPlayer();

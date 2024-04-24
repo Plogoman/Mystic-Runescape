@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/CELESTE Chill Music Compilation tenpers.mp3-5b3ae5e8507fed36bb48b5ecd1e12697.mp3str"
+
+[deps]
+
+source_file="res://sounds/CELESTE Chill Music Compilation tenpers.mp3"
+dest_files=[ "res://.import/CELESTE Chill Music Compilation tenpers.mp3-5b3ae5e8507fed36bb48b5ecd1e12697.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

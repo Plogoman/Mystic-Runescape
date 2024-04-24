@@ -1095,6 +1095,7 @@ position = Vector2( 116, 1 )
 DoorKey = "Stone"
 
 [node name="levelswitch" parent="." instance=ExtResource( 20 )]
+position = Vector2( -134, -21 )
 
 [connection signal="Death" from="Player" to="." method="_on_Player_Death"]
 [connection signal="animation_finished" from="ArcherEnemy/AnimatedSprite" to="ArcherEnemy" method="_on_AnimatedSprite_animation_finished"]
