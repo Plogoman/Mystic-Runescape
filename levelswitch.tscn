@@ -1,9 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levelswitch.cs" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://miscs/portal1.png" type="Texture" id=3]
+[ext_resource path="res://miscs/portal2.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=143]
+[sub_resource type="CapsuleShape2D" id=145]
+radius = 9.5
+height = 7.0
+
+[sub_resource type="SpriteFrames" id=144]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.25
+} ]
 
 [node name="levelswitch" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,10 +22,13 @@ script = ExtResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 143 )
+position = Vector2( 0.5, -3 )
+shape = SubResource( 145 )
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.328125, 0.296875 )
-texture = ExtResource( 2 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.19209e-07, -3 )
+scale = Vector2( 0.122388, 0.10356 )
+frames = SubResource( 144 )
+playing = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -9,7 +9,7 @@
 [ext_resource path="res://sounds/Jump sound effect.mp3" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 6, 8.5 )
+extents = Vector2( 5, 7.5 )
 
 [sub_resource type="AtlasTexture" id=150]
 atlas = ExtResource( 3 )
