@@ -57,13 +57,21 @@ C:\Users\PC\Desktop\OOP PROJECT\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Ru
 C:\Users\PC\Desktop\OOP PROJECT\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\OOP PROJECT\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.dll
 C:\Users\PC\Desktop\OOP PROJECT\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.pdb
-D:\Mystic-Runescape-Mark\.mono\temp\bin\Debug\Mystic- Runescape.dll
-D:\Mystic-Runescape-Mark\.mono\temp\bin\Debug\Mystic- Runescape.pdb
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.csproj.AssemblyReference.cache
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.GeneratedMSBuildEditorConfig.editorconfig
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfoInputs.cache
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfo.cs
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.csproj.CoreCompileInputs.cache
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.sourcelink.json
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.dll
-D:\Mystic-Runescape-Mark\.mono\temp\obj\Debug\Mystic- Runescape.pdb
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfo.cs
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.dll
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.pdb
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.dll
+C:\Users\PC\Desktop\New folder (2)\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.pdb
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.dll
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\bin\Debug\Mystic- Runescape.pdb
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.AssemblyInfo.cs
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.dll
+C:\Users\PC\Desktop\new oop project\Mystic-Runescape\.mono\temp\obj\Debug\Mystic- Runescape.pdb

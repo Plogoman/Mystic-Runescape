@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cartoon fireball sound effect.mp3-c40c72ee82c5f524364015c724d515e2.mp3str"
+
+[deps]
+
+source_file="res://sounds/cartoon fireball sound effect.mp3"
+dest_files=[ "res://.import/cartoon fireball sound effect.mp3-c40c72ee82c5f524364015c724d515e2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

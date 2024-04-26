@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/[Official] Celeste Original Soundtrack - 01 - Prologue.mp3-0adc9036db5d9c9eeb13589820f24629.mp3str"
+
+[deps]
+
+source_file="res://sounds/[Official] Celeste Original Soundtrack - 01 - Prologue.mp3"
+dest_files=[ "res://.import/[Official] Celeste Original Soundtrack - 01 - Prologue.mp3-0adc9036db5d9c9eeb13589820f24629.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
