@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class Adventurer : KinematicBody2D
 {
 	private const float Speed = 60.0f;
-	private const float Gravity = 600.0f;
-	private const float JumpVelocity = 200.0f;
+	private float Gravity = 500.0f;
+	private const float JumpVelocity = 150.0f;
 	private const float Friction = 0.1f;
 	private const float Acceleration = 0.25f;
 	private const float DashSpeed = 250.0f;
@@ -40,6 +40,9 @@ public class Adventurer : KinematicBody2D
 	
 	public float switchSpellCooldown = 0.5f;
 	public float switchSpellTimer = 0f;
+
+	
+	
 	
 
 	public List<Key> Keys = new List<Key>();
@@ -82,12 +85,14 @@ public class Adventurer : KinematicBody2D
 				    Input.IsActionJustPressed("Jump"))
 				{
 					Position = new Vector2(Position.x, Position.y + 2);
+					GetNode<AudioStreamPlayer>("jump").Play();
 				}
 				else if (Input.IsActionJustPressed("Jump"))
 				{
 					Velocity.y = -JumpVelocity;
 					animatedSprite.Play("Jump");
 					isInAir = true;
+					GetNode<AudioStreamPlayer>("jump").Play();
 				}
 				else
 				{
@@ -184,14 +189,15 @@ public class Adventurer : KinematicBody2D
 			{
 				FacingDirection.x -= 1;
 				animatedSprite.FlipH = true;
+				GetNode<AudioStreamPlayer>("run").Play();
 			}
 
 			if (Input.IsActionPressed("Right"))
 			{
 				FacingDirection.x += 1;
 				animatedSprite.FlipH = false;
+				GetNode<AudioStreamPlayer>("run").Play();
 			}
-			
 			if (Input.IsActionPressed("Up"))
 			{
 				FacingDirection.y = -1;
@@ -213,6 +219,11 @@ public class Adventurer : KinematicBody2D
 					GD.Print(Mana);
 					ManaTimer = ManaTimerReset;
 				}
+			}
+
+			if (Input.IsActionJustPressed("Escape"))
+			{
+				GetTree().ChangeScene("res://menu.tscn");
 			}
 		}
 
@@ -290,6 +301,7 @@ public class Adventurer : KinematicBody2D
 		}
 	}
 	
+	
 
 	public void UpdateMana(float ManaAmount)
 	{
@@ -301,6 +313,18 @@ public class Adventurer : KinematicBody2D
 		else if (Mana <= 0)
 		{
 			Mana = 0;
+		}
+	}
+	public void UpdateHealth(float ManaAmount)
+	{
+		Health += ManaAmount;
+		if (Health >= MaxMana)
+		{
+			Health = MaxHealth;
+		}
+		else if (Health <= 0)
+		{
+			Health = 0;
 		}
 	}
 

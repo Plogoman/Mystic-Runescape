@@ -8,3 +8,13 @@ D:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.csproj.CoreComp
 D:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.sourcelink.json
 D:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.dll
 D:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.pdb
+I:\Mystic-Runescape\.mono\temp\bin\ExportDebug\Mystic- Runescape.dll
+I:\Mystic-Runescape\.mono\temp\bin\ExportDebug\Mystic- Runescape.pdb
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.csproj.AssemblyReference.cache
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.GeneratedMSBuildEditorConfig.editorconfig
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.AssemblyInfoInputs.cache
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.AssemblyInfo.cs
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.csproj.CoreCompileInputs.cache
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.sourcelink.json
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.dll
+I:\Mystic-Runescape\.mono\temp\obj\ExportDebug\Mystic- Runescape.pdb

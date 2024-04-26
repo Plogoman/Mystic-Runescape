@@ -1,0 +1,78 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile011.png" type="Texture" id=1]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile016.png" type="Texture" id=2]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile012.png" type="Texture" id=3]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile015.png" type="Texture" id=4]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile019.png" type="Texture" id=5]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile010.png" type="Texture" id=6]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile013.png" type="Texture" id=7]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile017.png" type="Texture" id=8]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile018.png" type="Texture" id=9]
+[ext_resource path="res://SlimeEnemy/BlueSlimeJumpAttack/tile014.png" type="Texture" id=10]
+[ext_resource path="res://elderslime.cs" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 57, 56 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 65.0
+height = 60.0
+
+[node name="elderslime" type="KinematicBody2D"]
+position = Vector2( 151, -5 )
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 0, 0.172549, 0.964706, 1 )
+self_modulate = Color( 0.12549, 0.0588235, 0.909804, 1 )
+position = Vector2( 42, -149 )
+scale = Vector2( 7, 7 )
+frames = SubResource( 1 )
+animation = "Jump"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 42, -104 )
+shape = SubResource( 2 )
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( 3, -54 )
+enabled = true
+cast_to = Vector2( 0, 31 )
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 80, -55 )
+enabled = true
+cast_to = Vector2( 0, 29 )
+
+[node name="RayCastMiddleLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -73 )
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 0.000213623, 59 )
+collision_mask = 2
+
+[node name="RayCastMiddleRight" type="RayCast2D" parent="."]
+position = Vector2( 85, -73 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( -0.000221252, 66 )
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 42, -104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 1 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

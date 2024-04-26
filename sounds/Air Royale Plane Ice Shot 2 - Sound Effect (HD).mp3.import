@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Air Royale Plane Ice Shot 2 - Sound Effect (HD).mp3-9f3b7aa623c4926b5fb527c541d57927.mp3str"
+
+[deps]
+
+source_file="res://sounds/Air Royale Plane Ice Shot 2 - Sound Effect (HD).mp3"
+dest_files=[ "res://.import/Air Royale Plane Ice Shot 2 - Sound Effect (HD).mp3-9f3b7aa623c4926b5fb527c541d57927.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -22,6 +22,7 @@ public class HealingSpell : Spell
     public override void _Ready()
     {
         GetNode<AnimationPlayer>("AnimationPlayer").Play("idle");
+        GetNode<AudioStreamPlayer>("heal").Play();
     }
 
     public override void SetUp(bool facedirection)

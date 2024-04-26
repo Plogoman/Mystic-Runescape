@@ -11,7 +11,7 @@ public abstract class Spell : Node2D
     
     [Export]
     
-    public float DamageAmount;
+    public float DamageAmount = 2;
 
     [Export]
     

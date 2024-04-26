@@ -19,6 +19,7 @@ public class IceKnife : Spell
     {
         player = GetNode<AnimationPlayer>("AnimationPlayer");
         player.Play("cast");
+        GetNode<AudioStreamPlayer>("iceshard").Play();
     }
 
     public override void _PhysicsProcess(float delta)
@@ -70,6 +71,12 @@ public class IceKnife : Spell
         {
             SlimeEnemy slime = body as SlimeEnemy;
             slime.TakeDamage(DamageAmount);
+            player.Play("finish");
+        }
+        if (body is elderslime)
+        {
+            elderslime slime2 = body as elderslime;
+            slime2.TakeDamage(DamageAmount);
             player.Play("finish");
         }
         if (!faceDirection)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Footsteps Grass Sound Effect (HD).mp3-7c5ff5146f67e0a1c18a31d3a94c8153.mp3str"
+
+[deps]
+
+source_file="res://sounds/Footsteps Grass Sound Effect (HD).mp3"
+dest_files=[ "res://.import/Footsteps Grass Sound Effect (HD).mp3-7c5ff5146f67e0a1c18a31d3a94c8153.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

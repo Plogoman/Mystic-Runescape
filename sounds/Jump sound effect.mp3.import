@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Jump sound effect.mp3-f2d1b00a8d5a7073345e7177c0c00d7a.mp3str"
+
+[deps]
+
+source_file="res://sounds/Jump sound effect.mp3"
+dest_files=[ "res://.import/Jump sound effect.mp3-f2d1b00a8d5a7073345e7177c0c00d7a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

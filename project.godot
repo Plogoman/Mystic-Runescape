@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Mystic-Runescape"
-run/main_scene="res://Levels/Level1.tscn"
+run/main_scene="res://menu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/dpi/allow_hidpi=true
+window/size/fullscreen=true
+window/stretch/mode="2d"
 
 [gui]
 
@@ -67,6 +68,11 @@ attack={
 switch_spell={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Escape={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
