@@ -22,7 +22,7 @@ namespace MysticRunescape
 
         private AnimatedSprite animatedSprite;
         
-        private int health;
+        private float health = 8;
 
         [Export] 
         public PackedScene arrow;
@@ -130,6 +130,13 @@ namespace MysticRunescape
             shootTimer = shootTimerReset;
         }
         
-        
+        public void TakeDamage(float damageAmount)
+        {
+            health -= damageAmount;
+            if(health <= 0)
+            {
+                QueueFree();
+            }
+        }
     }
 }

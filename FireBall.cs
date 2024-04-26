@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.InteropServices;
 using MysticRunescape;
 
 public class FireBall : Spell
@@ -78,6 +79,13 @@ public class FireBall : Spell
         {
             elderslime slime2 = body as elderslime;
             slime2.TakeDamage(DamageAmount);
+            player.Play("finish");
+        }
+
+        if (body is ArcherEnemy)
+        {
+            ArcherEnemy archer = body as ArcherEnemy;
+            archer.TakeDamage(DamageAmount);
             player.Play("finish");
         }
         if (!faceDirection)

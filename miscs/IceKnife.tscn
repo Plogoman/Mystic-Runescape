@@ -144,7 +144,7 @@ tracks/0/keys = {
 [node name="IceKnife" type="Node2D"]
 script = ExtResource( 2 )
 LifeSpan = 5.0
-DamageAmount = 5
+DamageAmount = 4.0
 Speed = 50
 ManaCost = 10.0
 

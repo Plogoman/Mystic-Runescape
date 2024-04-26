@@ -30,7 +30,7 @@ public class Adventurer : KinematicBody2D
 	[Signal]
 	public delegate void Death();
 
-	public float Mana = 100f;
+	public float Mana = 10f;
 
 	public float MaxMana = 100f;
 
@@ -141,9 +141,26 @@ public class Adventurer : KinematicBody2D
 
 			if (Input.IsActionJustPressed("attack"))
 			{
-				if (Mana >= 10)
+				if (GameManager.MagicController.currentCount == 0)
 				{
-					attack();
+					if (Mana >= 10)
+					{
+						attack();
+					}
+				}
+				if (GameManager.MagicController.currentCount == 2)
+				{
+					if (Mana >= 70)
+					{
+						attack();
+					}
+				}
+				if (GameManager.MagicController.currentCount == 1)
+				{
+					if (Mana >= 30)
+					{
+						attack();
+					}
 				}
 			}
 

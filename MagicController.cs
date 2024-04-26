@@ -9,7 +9,9 @@ public class MagicController : Node
 
     public List<Spell> AvSpells = new List<Spell>();
 
-    private int currentCount;
+    public int currentCount;
+
+    
     // Called when the node enters the scene tree for the first time.
     public MagicController()
     {
@@ -22,7 +24,7 @@ public class MagicController : Node
         FireBall fireBall = new FireBall();
         fireBall.SpellScene = (ResourceLoader.Load(fireBall.ResourcePath) as PackedScene);
         AvSpells.Add(fireBall);
-        EquippedSpell = AvSpells[2];
+        EquippedSpell = AvSpells[0];
         InterfaceManager.SetSpellSprite(EquippedSpell.InterfaceTexture);
     }
 

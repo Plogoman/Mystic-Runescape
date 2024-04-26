@@ -14,7 +14,7 @@ public class elderslime : KinematicBody2D
     private Vector2 Velocity;
     private const float Gravity = 200.0f;
     private const float Speed = 30.0f;
-    private float health = 10;
+    private float health = 50;
     public static bool alive = true;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
