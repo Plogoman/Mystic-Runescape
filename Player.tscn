@@ -1,12 +1,14 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://GhostPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Adventurer/adventurer-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Adventurer-Hand-Combat/adventurer-hand-combat-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Adventurer.cs" type="Script" id=4]
+[ext_resource path="res://sounds/Footsteps Grass Sound Effect (HD).mp3" type="AudioStream" id=6]
+[ext_resource path="res://sounds/Jump sound effect.mp3" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 6, 8.5 )
+extents = Vector2( 5, 7.5 )
 
 [sub_resource type="AtlasTexture" id=150]
 atlas = ExtResource( 3 )
@@ -151,7 +153,7 @@ region = Rect2( 50, 185, 50, 37 )
 [sub_resource type="SpriteFrames" id=83]
 animations = [ {
 "frames": [ SubResource( 150 ), SubResource( 151 ), SubResource( 152 ), SubResource( 153 ), SubResource( 154 ), SubResource( 155 ), SubResource( 156 ) ],
-"loop": true,
+"loop": false,
 "name": "Death",
 "speed": 5.0
 }, {
@@ -176,7 +178,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 146 ), SubResource( 147 ), SubResource( 148 ), SubResource( 149 ) ],
-"loop": true,
+"loop": false,
 "name": "TakeDamage",
 "speed": 5.0
 } ]
@@ -201,7 +203,7 @@ animation = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.19, 0.19 )
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2( 5, 0 )
@@ -231,5 +233,13 @@ position = Vector2( 10, 0 )
 
 [node name="SpellCastLeft" type="Position2D" parent="."]
 position = Vector2( -10, 0 )
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 5.429
+
+[node name="run" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 3.714
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

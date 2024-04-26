@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public class SlimeEnemy : KinematicBody2D
+public class elderslime : KinematicBody2D
 {
-    // Declare member variables here. Examples:
+   // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
     private AnimatedSprite Sprite;
@@ -14,8 +14,8 @@ public class SlimeEnemy : KinematicBody2D
     private Vector2 Velocity;
     private const float Gravity = 200.0f;
     private const float Speed = 30.0f;
-    private float health;
-    
+    private float health = 10;
+    public static bool alive = true;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -82,6 +82,7 @@ public class SlimeEnemy : KinematicBody2D
         health -= damageAmount;
         if(health <= 0)
         {
+            alive = false;
             QueueFree();
         }
     }
