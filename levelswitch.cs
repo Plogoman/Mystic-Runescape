@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class GhostPlayer : Node2D
+public class levelswitch : Node2D
 {
     // Declare member variables here. Examples:
     // private int a = 2;
@@ -10,21 +10,19 @@ public class GhostPlayer : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GetNode<AnimationPlayer>("AnimationPlayer").Play("Fade Out");
-    }
-    
-    public void SetHValue(bool value)
-    {
-        GetNode<Sprite>("Sprite").FlipH = value;
+        
     }
 
-    public void Destroy()
-    {
-        QueueFree();
-    }
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
 //  public override void _Process(float delta)
 //  {
 //      
 //  }
+    private void _on_Area2D_body_entered(object body)
+    {
+        if (body is Adventurer)
+        {
+            GetTree().ChangeScene("res://First2.tscn");
+        }
+    }
 }

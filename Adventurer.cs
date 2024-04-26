@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class Adventurer : KinematicBody2D
 {
 	private const float Speed = 60.0f;
-	private const float Gravity = 600.0f;
-	private const float JumpVelocity = 200.0f;
+	private float Gravity = 500.0f;
+	private const float JumpVelocity = 150.0f;
 	private const float Friction = 0.1f;
 	private const float Acceleration = 0.25f;
 	private const float DashSpeed = 250.0f;
@@ -20,7 +20,7 @@ public class Adventurer : KinematicBody2D
 	private Vector2 Velocity = new Vector2();
 	private bool isInAir = false;
 	[Export] public PackedScene GhostPlayerInstance;
-	private AnimatedSprite animatedSprite;
+	public AnimatedSprite animatedSprite;
 	public float MaxHealth = 5;
 	public float Health = 5;
 	public int value;
@@ -30,13 +30,20 @@ public class Adventurer : KinematicBody2D
 	[Signal]
 	public delegate void Death();
 
-	private float Mana = 100f;
+	public float Mana = 100f;
 
-	private float MaxMana = 100f;
+	public float MaxMana = 100f;
 
-	private float ManaTimerReset = 2f;
+	public float ManaTimerReset = 2f;
 
-	private float ManaTimer = 2f;
+	public float ManaTimer = 2f;
+	
+	public float switchSpellCooldown = 0.5f;
+	public float switchSpellTimer = 0f;
+
+	
+	
+	
 
 	public List<Key> Keys = new List<Key>();
 	public List<Key2> Keys2 = new List<Key2>();
@@ -78,12 +85,14 @@ public class Adventurer : KinematicBody2D
 				    Input.IsActionJustPressed("Jump"))
 				{
 					Position = new Vector2(Position.x, Position.y + 2);
+					GetNode<AudioStreamPlayer>("jump").Play();
 				}
 				else if (Input.IsActionJustPressed("Jump"))
 				{
 					Velocity.y = -JumpVelocity;
 					animatedSprite.Play("Jump");
 					isInAir = true;
+					GetNode<AudioStreamPlayer>("jump").Play();
 				}
 				else
 				{
@@ -113,10 +122,12 @@ public class Adventurer : KinematicBody2D
 					Velocity = new Vector2(0, 0);
 				}
 			}
-			else
+			
+			if(isInAir || !isDashing || !IsOnFloor())
 			{
 				Velocity.y += Gravity * delta;
 			}
+			
 
 			if (Mana < 100 && ManaTimer <= 0)
 			{
@@ -130,12 +141,22 @@ public class Adventurer : KinematicBody2D
 
 			if (Input.IsActionJustPressed("attack"))
 			{
-				attack();
+				if (Mana >= 10)
+				{
+					attack();
+				}
 			}
 
-			if (Input.IsActionPressed("switch_spell"))
+			if (switchSpellTimer > 0)
+			{
+				switchSpellTimer -= delta;
+			}
+			
+			if (Input.IsActionPressed("switch_spell") && switchSpellTimer <= 0)
 			{
 				GameManager.MagicController.CycleSpell();
+				
+				switchSpellTimer = switchSpellCooldown;
 			}
 
 			MoveAndSlide(Velocity, Vector2.Up);
@@ -144,10 +165,7 @@ public class Adventurer : KinematicBody2D
 
 	private void attack()
 	{
-		if (Mana >= 10)
-		{
-			GameManager.MagicController.CastSpell(GameManager.Player.GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
-		}
+		GameManager.MagicController.CastSpell(GameManager.Player.GetNode<AnimatedSprite>("AnimatedSprite").FlipH);
 	}
 
 	private void InteractWithItem(Node obj)
@@ -171,14 +189,15 @@ public class Adventurer : KinematicBody2D
 			{
 				FacingDirection.x -= 1;
 				animatedSprite.FlipH = true;
+				GetNode<AudioStreamPlayer>("run").Play();
 			}
 
 			if (Input.IsActionPressed("Right"))
 			{
 				FacingDirection.x += 1;
 				animatedSprite.FlipH = false;
+				GetNode<AudioStreamPlayer>("run").Play();
 			}
-			
 			if (Input.IsActionPressed("Up"))
 			{
 				FacingDirection.y = -1;
@@ -200,6 +219,11 @@ public class Adventurer : KinematicBody2D
 					GD.Print(Mana);
 					ManaTimer = ManaTimerReset;
 				}
+			}
+
+			if (Input.IsActionJustPressed("Escape"))
+			{
+				GetTree().ChangeScene("res://menu.tscn");
 			}
 		}
 
@@ -276,14 +300,8 @@ public class Adventurer : KinematicBody2D
 			EmitSignal(nameof(Death));
 		}
 	}
-
-	public void RespawnPlayer()
-	{
-		Show();
-		Health = 5; 
-		InterfaceManager.UpdateHealth(MaxHealth,Health);
-		InterfaceManager.UpdateMana(MaxMana,Mana);
-	}
+	
+	
 
 	public void UpdateMana(float ManaAmount)
 	{
@@ -295,6 +313,18 @@ public class Adventurer : KinematicBody2D
 		else if (Mana <= 0)
 		{
 			Mana = 0;
+		}
+	}
+	public void UpdateHealth(float ManaAmount)
+	{
+		Health += ManaAmount;
+		if (Health >= MaxMana)
+		{
+			Health = MaxHealth;
+		}
+		else if (Health <= 0)
+		{
+			Health = 0;
 		}
 	}
 
