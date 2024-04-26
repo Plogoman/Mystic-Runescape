@@ -23,7 +23,7 @@ public class level3 : Node2D
     {
         if (body is Adventurer)
         {
-            GetTree().ChangeScene("res://First.tscn");
+            GetTree().ChangeScene("res://last level.tscn");
         }
     }
 }

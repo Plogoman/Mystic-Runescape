@@ -74,6 +74,12 @@ public class FireBall : Spell
             slime.TakeDamage(DamageAmount);
             player.Play("finish");
         }
+        if (body is elderslime)
+        {
+            elderslime slime2 = body as elderslime;
+            slime2.TakeDamage(DamageAmount);
+            player.Play("finish");
+        }
         if (!faceDirection)
         {
             player.Play("finish");

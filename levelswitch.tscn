@@ -29,6 +29,7 @@ shape = SubResource( 145 )
 position = Vector2( 1.19209e-07, -3 )
 scale = Vector2( 0.122388, 0.10356 )
 frames = SubResource( 144 )
+frame = 1
 playing = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

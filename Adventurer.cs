@@ -49,7 +49,6 @@ public class Adventurer : KinematicBody2D
 	public List<Key2> Keys2 = new List<Key2>();
 	public override void _Ready()
 	{
-		GetNode<AudioStreamPlayer>("background").Play();
 		animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
 		GameManager.Player = this;
 	}
@@ -220,6 +219,11 @@ public class Adventurer : KinematicBody2D
 					GD.Print(Mana);
 					ManaTimer = ManaTimerReset;
 				}
+			}
+
+			if (Input.IsActionJustPressed("Escape"))
+			{
+				GetTree().ChangeScene("res://menu.tscn");
 			}
 		}
 
