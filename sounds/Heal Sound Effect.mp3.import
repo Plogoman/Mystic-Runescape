@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heal Sound Effect.mp3-465c85026b69f33c0373f48ebce3f7cc.mp3str"
+
+[deps]
+
+source_file="res://sounds/Heal Sound Effect.mp3"
+dest_files=[ "res://.import/Heal Sound Effect.mp3-465c85026b69f33c0373f48ebce3f7cc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
